@@ -16,7 +16,7 @@ public class UserController {
 
     //Récupérer la liste des users
     @RequestMapping(value = "/users")
-    public MappingJacksonValue listeProduits() {
+    public MappingJacksonValue listeUsers() {
 
         Iterable<User> users = userDao.findAll();
         MappingJacksonValue usersFiltres = new MappingJacksonValue(users);
@@ -24,10 +24,10 @@ public class UserController {
 
     }
 
-    @RequestMapping(value = "/user/{id}")
-    public MappingJacksonValue findUser(@PathVariable Long id) {
+    @RequestMapping(value = "/user/{idUser}")
+    public MappingJacksonValue findUser(@PathVariable Long idUser) {
 
-        Optional<User> user = userDao.findById(id);
+        Optional<User> user = userDao.findById(idUser);
         MappingJacksonValue userFiltre= new MappingJacksonValue(user);
         return userFiltre;
 

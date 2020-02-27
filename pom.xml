@@ -16,7 +16,7 @@
 	<description>Amis de l'escalade</description>
 
 	<properties>
-		<java.version>13</java.version>
+		<java.version>8</java.version>
 	</properties>
 
 	<dependencies>
