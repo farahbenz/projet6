@@ -3,34 +3,33 @@ package com.ocr.P6.controller;
 import com.ocr.P6.dao.UserDao;
 import com.ocr.P6.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.converter.json.MappingJacksonValue;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Optional;
+import java.lang.reflect.Member;
 
-@RestController
+
+@Controller
 public class UserController {
+
 
     @Autowired
     private UserDao userDao;
 
-    //Récupérer la liste des users
-    @RequestMapping(value = "/users")
-    public MappingJacksonValue listeUsers() {
 
-        Iterable<User> users = userDao.findAll();
-        MappingJacksonValue usersFiltres = new MappingJacksonValue(users);
-        return usersFiltres;
-
+    @RequestMapping(value = "/inscription", method = RequestMethod.GET)
+    public String ajouterUtilisateur(Model model){
+        User user = new User();
+        model.addAttribute("user", user);
+        return "inscription";
     }
 
-    @RequestMapping(value = "/user/{idUser}")
-    public MappingJacksonValue findUser(@PathVariable Long idUser) {
-
-        Optional<User> user = userDao.findById(idUser);
-        MappingJacksonValue userFiltre= new MappingJacksonValue(user);
-        return userFiltre;
-
+    @RequestMapping(value = "/inscription", method = RequestMethod.POST)
+    public String enregistrerClient(User user){
+        User users = new User(user.getName(), user.getEmail(), user.getPassword());
+        userDao.save(users);
+        return "index";
     }
 
-}
+    }
