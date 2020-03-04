@@ -66,7 +66,7 @@
 
                 <div class="card-body">
                     <h5 class="card-title text-center">S'inscrire</h5>
-                    <th:form modelAttribute="user" action="/inscription/inscription" class="form-signin"  method="post">
+                    <th:form modelAttribute="user" action="/inscription" class="form-signin"  method="post">
 
 
                         <div class="form-label-group">
@@ -75,14 +75,14 @@
                         </div>
 
                         <div class="form-label-group">
-                            <label>Pseudo</label>
+                            <label>Email</label>
                             <th:input path="email" type="email" class="form-control" placeholder="Email"/>
                         </div>
 
                         <hr>
 
                         <div class="form-label-group">
-                            <label>Pseudo</label>
+                            <label>Password</label>
                             <th:input path="password" type="password" class="form-control" placeholder="Password"/>
                         </div>
 
