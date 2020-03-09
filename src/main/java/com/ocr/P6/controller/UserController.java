@@ -17,6 +17,28 @@ public class UserController {
     @Autowired
     private UserDao userDao;
 
+    @RequestMapping(value = "/index", method = RequestMethod.GET)
+    public String index(){
+        return "index";
+    }
+
+    @RequestMapping(value = "/acceuil", method = RequestMethod.GET)
+    public String acceuil(){
+        return "acceuil";
+    }
+
+    @RequestMapping(value = "/contact", method = RequestMethod.GET)
+    public String contact(){
+        return "contact";
+    }
+
+    @RequestMapping(value = "/spot", method = RequestMethod.GET)
+    public String spot(){
+        return "spots";
+    }
+
+
+
 
     /**
      * Méthode qui va permettre la création d'un nouveau utilisateur
@@ -38,7 +60,7 @@ public class UserController {
     public String enregistrerClient(User user){
         User newUser = new User(user.getName(), user.getEmail(), user.getPassword());
         userDao.save(newUser);
-        log.info("Un utilisateur a été créer et stocké en base de données");
+        log.info("Un utilisateur est stocké en base de données");
         return "index";
     }
 

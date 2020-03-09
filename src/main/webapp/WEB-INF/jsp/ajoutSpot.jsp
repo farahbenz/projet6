@@ -13,7 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Les amis de l'escalade</title>
+    <title>AjoutSpot</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -65,31 +65,54 @@
             <div class="card card-signin flex-row my-5">
 
                 <div class="card-body">
-                    <h5 class="card-title text-center">S'inscrire</h5>
-                    <th:form modelAttribute="user" action="/inscription" class="form-signin"  method="post">
+                    <h5 class="card-title text-center">Ajouter un spot</h5>
+
+                    <th:form modelAttribute="spot" action="/ajoutSpot" class="form-signin"  method="post">
 
 
                         <div class="form-label-group">
                             <label>Nom</label>
-                            <th:input path="name" type="text" class="form-control" />
+                            <th:input path="nom" type="text" class="form-control"/>
                         </div>
 
                         <div class="form-label-group">
-                            <label>Email</label>
-                            <th:input path="email" type="email" class="form-control" />
+                            <label>Coordonnée Geograpique</label>
+                            <th:input path="coordoneeGeo" type="text" class="form-control"/>
+                        </div>
+
+                        <div class="form-label-group">
+                            <label>Cotation</label>
+                            <th:input path="cotation" type="text" class="form-control"/>
+                        </div>
+
+                        <div class="form-label-group">
+                            <label>Hauteur</label>
+                            <th:input path="hauteur" type="text" class="form-control"/>
+                        </div>
+
+                        <div class="form-label-group">
+                            <label>Nombre de voies</label>
+                            <th:input path="nombreDeVoies" type="text" class="form-control"/>
+                        </div>
+
+                        <div class="form-label-group">
+                            <label>Orientation</label>
+                            <th:input path="orientation" type="text" class="form-control"/>
+                        </div>
+
+                        <div class="form-label-group">
+                            <label>Secteur</label>
+                            <th:input path="secteur" type="text" class="form-control"/>
+                        </div>
+
+                        <div class="form-label-group">
+                            <label>Type</label>
+                            <th:input path="type" type="text" class="form-control"/>
                         </div>
 
                         <hr>
 
-                        <div class="form-label-group">
-                            <label>Password</label>
-                            <th:input path="password" type="password" class="form-control" />
-                        </div>
-
-                        <hr>
-
-                        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">S'enregistrer</button>
-                        <a class="d-block text-center mt-2 small" href="/connexion">Se connecter</a>
+                        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Soumettre ce spot</button>
                         <hr class="my-4">
 
                     </th:form>

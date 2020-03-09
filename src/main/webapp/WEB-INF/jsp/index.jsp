@@ -35,7 +35,7 @@
       <div class="mx-auto text-center">
         <h1 class="mx-auto my-0 text-uppercase">Les amis de l'escalade</h1>
         <h2 class="text-white-50 mx-auto mt-2 mb-5">Vous êtes passionnés ? C'est par ici...</h2>
-        <a href="acceuil.jsp" class="btn btn-primary js-scroll-trigger">Entrée</a>
+        <a href="/acceuil" class="btn btn-primary js-scroll-trigger">Entrée</a>
       </div>
     </div>
   </header>

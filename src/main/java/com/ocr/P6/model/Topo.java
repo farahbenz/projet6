@@ -6,17 +6,36 @@ import java.util.Date;
 @Entity
 public class Topo {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_topo", nullable = false, unique = true)
     private Long idTopo;
+    @Column(name = "nom", nullable = false, unique = true)
     private String nom;
     private String description;
     private String region;
+    @Column(name = "etat_topo", nullable = false, unique = true)
     private String etatTopo;
 
     @Temporal(TemporalType.DATE)
     private Date dateParution;
 
+    @ManyToOne
+    @JoinColumn(name="idUser")
+    private User user;
 
+    @OneToOne
+    private Booking booking;
+
+    public Topo(String nom, String description, String region, String etatTopo, Date dateParution) {
+        this.nom = nom;
+        this.description = description;
+        this.region = region;
+        this.etatTopo = etatTopo;
+        this.dateParution = dateParution;
+    }
+
+    public Topo() {
+    }
 
     public Long getIdTopo() {
         return idTopo;

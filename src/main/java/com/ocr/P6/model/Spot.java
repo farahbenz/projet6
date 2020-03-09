@@ -1,23 +1,58 @@
 package com.ocr.P6.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
+@Table(name = "spot")
 public class Spot {
     @Id
-    @GeneratedValue
-
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_spot", nullable = false, unique = true)
     private Long idSpot;
+
+    @Column(name = "nom", nullable = false, unique = true)
+    private String nom;
     private String secteur;
     private String type;
     private String hauteur;
     private String orientation;
+    @Column(name = "nombre_de_voies", nullable = false)
     private String nombreDeVoies;
     private String cotation;
+    @Column(name = "coordonee_geo", nullable = false, unique = true)
     private String coordoneeGeo;
 
+    @ManyToOne
+    @JoinColumn(name="idUser")
+    private User user;
+
+    @OneToMany (mappedBy = "spot")
+    private List<Comment> comments;
+
+
+    public Spot(String nom, String secteur, String type, String hauteur, String orientation, String nombreDeVoies, String cotation, String coordoneeGeo) {
+        this.nom = nom;
+        this.secteur = secteur;
+        this.type = type;
+        this.hauteur = hauteur;
+        this.orientation = orientation;
+        this.nombreDeVoies = nombreDeVoies;
+        this.cotation = cotation;
+        this.coordoneeGeo = coordoneeGeo;
+    }
+
+    public Spot() {
+    }
+
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
 
     public Long getIdSpot() {
         return idSpot;

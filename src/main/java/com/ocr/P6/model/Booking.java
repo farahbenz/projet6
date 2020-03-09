@@ -1,16 +1,26 @@
 package com.ocr.P6.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Booking {
     @Id
-    @GeneratedValue
-
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idReservation;
+
+    @Column(name = "statut_reservation", nullable = false)
     private String statutReservation;
+
+    @ManyToOne
+    @JoinColumn(name="idUser")
+    private User user;
+
+    public Booking(String statutReservation) {
+        this.statutReservation = statutReservation;
+    }
+
+    public Booking() {
+    }
 
     public Long getIdReservation() {
         return idReservation;

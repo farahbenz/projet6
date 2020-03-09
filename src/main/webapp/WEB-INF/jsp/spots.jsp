@@ -13,7 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Les amis de l'escalade</title>
+    <title>Spots</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -59,55 +59,42 @@
     </div>
 </nav>
 
-<div class="container">
-    <div class="row">
-        <div class="col-lg-10 col-xl-9 mx-auto">
-            <div class="card card-signin flex-row my-5">
 
-                <div class="card-body">
-                    <h5 class="card-title text-center">S'inscrire</h5>
-                    <th:form modelAttribute="user" action="/inscription" class="form-signin"  method="post">
+<div class="row">
+    <div class ="container">
+        <h2 class="text-black mb-4 text-center">SPOTS/SITES</h2>
 
-
-                        <div class="form-label-group">
-                            <label>Nom</label>
-                            <th:input path="name" type="text" class="form-control" />
-                        </div>
-
-                        <div class="form-label-group">
-                            <label>Email</label>
-                            <th:input path="email" type="email" class="form-control" />
-                        </div>
-
-                        <hr>
-
-                        <div class="form-label-group">
-                            <label>Password</label>
-                            <th:input path="password" type="password" class="form-control" />
-                        </div>
-
-                        <hr>
-
-                        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">S'enregistrer</button>
-                        <a class="d-block text-center mt-2 small" href="/connexion">Se connecter</a>
-                        <hr class="my-4">
-
-                    </th:form>
-                </div>
-            </div>
-        </div>
+        <table
+                class="table table-striped table-hover table-condensed table-bordered">
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Secteur</th>
+                <th>Type</th>
+                <th>Hauteur</th>
+                <th>Orientation</th>
+                <th>Nombre de voies</th>
+                <th>Coordonnées geographique</th>
+                <th>Cotation</th>
+            </tr>
+            <c:forEach var="spot" items="${spots}">
+                <tr>
+                    <td>${spot.idSpot}</td>
+                    <td>${spot.nom}</td>
+                    <td>${spot.secteur}</td>
+                    <td>${spot.type}</td>
+                    <td>${spot.hauteur}</td>
+                    <td>${spot.orientation}</td>
+                    <td>${spot.nombreDeVoies}</td>
+                    <td>${spot.coordoneeGeo}</td>
+                    <td>${spot.cotation}</td>
+                </tr>
+            </c:forEach>
+        </table>
     </div>
 </div>
-
-
-
-
-<footer class="bg-dark small text-center text-black-50">
-    <div class="container">
-        Copyright &copy; Les amis de l'escalade 2019
-    </div>
-</footer>
-
+</div>
+</div>
 
 
 <!-- Bootstrap core JavaScript -->
