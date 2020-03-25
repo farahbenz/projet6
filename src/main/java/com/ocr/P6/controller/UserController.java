@@ -6,39 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 @Controller
 public class UserController {
 
-    private static final Logger log = LogManager.getLogger(UserController.class);
-
     @Autowired
     private UserDao userDao;
-
-    @RequestMapping(value = "/index", method = RequestMethod.GET)
-    public String index(){
-        return "index";
-    }
-
-    @RequestMapping(value = "/acceuil", method = RequestMethod.GET)
-    public String acceuil(){
-        return "acceuil";
-    }
-
-    @RequestMapping(value = "/contact", method = RequestMethod.GET)
-    public String contact(){
-        return "contact";
-    }
-
-    @RequestMapping(value = "/spot", method = RequestMethod.GET)
-    public String spot(){
-        return "spots";
-    }
-
-
-
 
     /**
      * Méthode qui va permettre la création d'un nouveau utilisateur
@@ -46,7 +19,6 @@ public class UserController {
 
     @RequestMapping(value = "/inscription", method = RequestMethod.GET)
     public String ajouterUtilisateur(Model model){
-        log.info("Un nouveau objet user est créé");
         User user = new User();
         model.addAttribute("user", user);
         return "inscription";
@@ -60,7 +32,6 @@ public class UserController {
     public String enregistrerClient(User user){
         User newUser = new User(user.getName(), user.getEmail(), user.getPassword());
         userDao.save(newUser);
-        log.info("Un utilisateur est stocké en base de données");
         return "index";
     }
 

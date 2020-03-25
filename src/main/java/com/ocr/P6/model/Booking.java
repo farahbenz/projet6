@@ -6,7 +6,7 @@ import javax.persistence.*;
 public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idReservation;
+    private Long id;
 
     @Column(name = "statut_reservation", nullable = false)
     private String statutReservation;
@@ -22,12 +22,12 @@ public class Booking {
     public Booking() {
     }
 
-    public Long getIdReservation() {
-        return idReservation;
+    public Long getId() {
+        return id;
     }
 
-    public void setIdReservation(Long idReservation) {
-        this.idReservation = idReservation;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getStatutReservation() {

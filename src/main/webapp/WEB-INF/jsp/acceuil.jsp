@@ -40,7 +40,7 @@
   </button>
 
   <div class="button-signup">
-    <a class="btn btn-primary" href="/inscription" role="button">s'inscrire</a>
+    <a class="btn btn-primary" href="/inscription" role="button">Se connecter</a>
   </div>
 
   <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -75,7 +75,7 @@
       <form>
         <div class="form-row">
           <div class="col-12 col-md-9 mb-2 mb-md-0">
-            <input type="Rechercher" class="form-control form-control-lg" placeholder="Trouver un spot">
+            <input type="input" class="form-control form-control-lg" placeholder="Entrer une region">
           </div>
           <div class="col-12 col-md-3">
             <button type="submit" class="btn btn-block btn-lg btn-primary">Rechercher</button>

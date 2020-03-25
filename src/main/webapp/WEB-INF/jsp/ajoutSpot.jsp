@@ -39,6 +39,9 @@
             <i class="fas fa-bars"></i>
         </button>
 
+        <div class="button-signup">
+            <a class="btn btn-primary" href="/inscription" role="button">Se connecter</a>
+        </div>
 
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
@@ -59,6 +62,7 @@
     </div>
 </nav>
 
+
 <div class="container">
     <div class="row">
         <div class="col-lg-10 col-xl-9 mx-auto">
@@ -73,6 +77,16 @@
                         <div class="form-label-group">
                             <label>Nom</label>
                             <th:input path="nom" type="text" class="form-control"/>
+                        </div>
+
+                        <div class="form-label-group">
+                            <label>Secteur</label>
+                            <th:input path="secteur" type="text" class="form-control"/>
+                        </div>
+
+                        <div class="form-label-group">
+                            <label>Type</label>
+                            <th:input path="type" type="text" class="form-control"/>
                         </div>
 
                         <div class="form-label-group">
@@ -98,16 +112,6 @@
                         <div class="form-label-group">
                             <label>Orientation</label>
                             <th:input path="orientation" type="text" class="form-control"/>
-                        </div>
-
-                        <div class="form-label-group">
-                            <label>Secteur</label>
-                            <th:input path="secteur" type="text" class="form-control"/>
-                        </div>
-
-                        <div class="form-label-group">
-                            <label>Type</label>
-                            <th:input path="type" type="text" class="form-control"/>
                         </div>
 
                         <hr>

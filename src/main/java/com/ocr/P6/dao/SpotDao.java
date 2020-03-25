@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+
 @Repository
 public interface SpotDao extends JpaRepository<Spot, Long> {
 
@@ -18,4 +19,8 @@ public interface SpotDao extends JpaRepository<Spot, Long> {
     @Override
     <S extends Spot> S save(S s);
 
+//
+//    CriteriaBuilder getCriteriaBuilder();
+//
+//    TypedQuery<Spot> createQuery(CriteriaQuery<Spot> cq);
 }

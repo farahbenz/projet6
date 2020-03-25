@@ -7,8 +7,7 @@ import java.util.Date;
 public class Topo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_topo", nullable = false, unique = true)
-    private Long idTopo;
+    private Long id;
     @Column(name = "nom", nullable = false, unique = true)
     private String nom;
     private String description;
@@ -37,12 +36,12 @@ public class Topo {
     public Topo() {
     }
 
-    public Long getIdTopo() {
-        return idTopo;
+    public Long getId() {
+        return id;
     }
 
-    public void setIdTopo(Long idTopo) {
-        this.idTopo = idTopo;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNom() {

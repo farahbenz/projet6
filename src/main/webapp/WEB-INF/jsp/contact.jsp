@@ -41,6 +41,10 @@
       </button>
 
       <div class="button-signup">
+        <a class="btn btn-primary" href="/inscription" role="button">Se connecter</a>
+      </div>
+
+      <div class="button-signup">
       <a class="btn btn-primary" href="/inscription" role="button">s'inscrire</a>
     </div>
           

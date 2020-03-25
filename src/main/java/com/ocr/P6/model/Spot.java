@@ -8,19 +8,16 @@ import java.util.List;
 public class Spot {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_spot", nullable = false, unique = true)
-    private Long idSpot;
-
-    @Column(name = "nom", nullable = false, unique = true)
+    private Long id;
     private String nom;
     private String secteur;
     private String type;
     private String hauteur;
     private String orientation;
-    @Column(name = "nombre_de_voies", nullable = false)
+    @Column(name = "nombre_de_voies")
     private String nombreDeVoies;
     private String cotation;
-    @Column(name = "coordonee_geo", nullable = false, unique = true)
+    @Column(name = "coordonee_geo")
     private String coordoneeGeo;
 
     @ManyToOne
@@ -31,7 +28,24 @@ public class Spot {
     private List<Comment> comments;
 
 
-    public Spot(String nom, String secteur, String type, String hauteur, String orientation, String nombreDeVoies, String cotation, String coordoneeGeo) {
+
+    public Spot() {
+    }
+
+    public Spot(String nom, String secteur, String type, String hauteur, String orientation, String nombreDeVoies, String cotation, String coordoneeGeo, User user, List<Comment> comments) {
+        this.nom = nom;
+        this.secteur = secteur;
+        this.type = type;
+        this.hauteur = hauteur;
+        this.orientation = orientation;
+        this.nombreDeVoies = nombreDeVoies;
+        this.cotation = cotation;
+        this.coordoneeGeo = coordoneeGeo;
+        this.user = user;
+        this.comments = comments;
+    }
+
+    public Spot(String nom, String nombreDeVoies, String coordoneeGeo, String cotation, String hauteur, String orientation, String secteur, String type) {
         this.nom = nom;
         this.secteur = secteur;
         this.type = type;
@@ -42,10 +56,6 @@ public class Spot {
         this.coordoneeGeo = coordoneeGeo;
     }
 
-    public Spot() {
-    }
-
-
     public String getNom() {
         return nom;
     }
@@ -54,12 +64,12 @@ public class Spot {
         this.nom = nom;
     }
 
-    public Long getIdSpot() {
-        return idSpot;
+    public Long getId() {
+        return id;
     }
 
-    public void setIdSpot(Long idSpot) {
-        this.idSpot = idSpot;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getSecteur() {
@@ -117,4 +127,5 @@ public class Spot {
     public void setCoordoneeGeo(String coordoneeGeo) {
         this.coordoneeGeo = coordoneeGeo;
     }
+
 }

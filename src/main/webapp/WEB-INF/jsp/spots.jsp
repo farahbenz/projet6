@@ -39,6 +39,9 @@
             <i class="fas fa-bars"></i>
         </button>
 
+        <div class="button-signup">
+            <a class="btn btn-primary" href="/inscription" role="button">Se connecter</a>
+        </div>
 
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
@@ -59,6 +62,10 @@
     </div>
 </nav>
 
+<div class="button">
+    <a class="btn btn-primary" href="/ajoutSpot" role="button"> Ajouter un spot</a>
+</div>
+
 
 <div class="row">
     <div class ="container">
@@ -67,34 +74,25 @@
         <table
                 class="table table-striped table-hover table-condensed table-bordered">
             <tr>
-                <th>Id</th>
                 <th>Nom</th>
-                <th>Secteur</th>
-                <th>Type</th>
-                <th>Hauteur</th>
-                <th>Orientation</th>
-                <th>Nombre de voies</th>
-                <th>Coordonnées geographique</th>
-                <th>Cotation</th>
+                <th>Région</th>
+                <th>Action</th>
             </tr>
+
             <c:forEach var="spot" items="${spots}">
                 <tr>
-                    <td>${spot.idSpot}</td>
                     <td>${spot.nom}</td>
                     <td>${spot.secteur}</td>
-                    <td>${spot.type}</td>
-                    <td>${spot.hauteur}</td>
-                    <td>${spot.orientation}</td>
-                    <td>${spot.nombreDeVoies}</td>
-                    <td>${spot.coordoneeGeo}</td>
-                    <td>${spot.cotation}</td>
+                    <td><a class="btn btn-primary" href="/afficheSpot/${spot.id}" role="button" >Detail</a></td>
+                    </td>
                 </tr>
+
             </c:forEach>
+
         </table>
     </div>
 </div>
-</div>
-</div>
+
 
 
 <!-- Bootstrap core JavaScript -->
