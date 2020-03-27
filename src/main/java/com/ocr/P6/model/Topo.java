@@ -1,5 +1,7 @@
 package com.ocr.P6.model;
 
+import org.hibernate.annotations.UpdateTimestamp;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -12,9 +14,11 @@ public class Topo {
     private String nom;
     private String description;
     private String region;
-    @Column(name = "etat_topo", nullable = false, unique = true)
-    private String etatTopo;
 
+    @Column(name = "etat_topo")
+    private Boolean disponibilite = true;
+
+    @UpdateTimestamp
     @Temporal(TemporalType.DATE)
     private Date dateParution;
 
@@ -25,11 +29,11 @@ public class Topo {
     @OneToOne
     private Booking booking;
 
-    public Topo(String nom, String description, String region, String etatTopo, Date dateParution) {
+    public Topo(String nom, String description, String region, Boolean disponibilite, Date dateParution) {
         this.nom = nom;
         this.description = description;
         this.region = region;
-        this.etatTopo = etatTopo;
+        this.disponibilite = disponibilite;
         this.dateParution = dateParution;
     }
 
@@ -68,12 +72,12 @@ public class Topo {
         this.region = region;
     }
 
-    public String getEtatTopo() {
-        return etatTopo;
+    public Boolean getDisponibilite() {
+        return disponibilite;
     }
 
-    public void setEtatTopo(String etatTopo) {
-        this.etatTopo = etatTopo;
+    public void setDisponibilite(Boolean disponibilite) {
+        this.disponibilite = disponibilite;
     }
 
     public Date getDateParution() {

@@ -2,12 +2,14 @@ package com.ocr.P6.controller;
 
 import com.ocr.P6.dao.CommentDao;
 import com.ocr.P6.model.Comment;
+import com.ocr.P6.model.Spot;
+import com.ocr.P6.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 
 @Controller
@@ -36,6 +38,7 @@ public class CommentController {
         commentDao.save(comment);
         return "spots";
     }
+
 
 
 

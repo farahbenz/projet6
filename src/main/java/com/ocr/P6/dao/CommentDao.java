@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
+
 public interface CommentDao extends JpaRepository<Comment, Long> {
     @Override
     List<Comment>findAll();
@@ -18,4 +19,6 @@ public interface CommentDao extends JpaRepository<Comment, Long> {
     List<Comment> findAll(Sort sort);
 
     List<Comment> findAllBySpot(Spot spot);
+
+
 }

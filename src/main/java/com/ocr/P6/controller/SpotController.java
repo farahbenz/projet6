@@ -7,9 +7,8 @@ import com.ocr.P6.model.Spot;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
+
 
 @Controller
 public class SpotController {
@@ -56,8 +55,8 @@ public class SpotController {
      */
 
     @RequestMapping(value = "/afficheSpot/{id}")
-    public String getIdSpot(@PathVariable("id") Long spotId, Model model) {
-        Spot spot = spotDao.findById(spotId).get();
+    public String getIdSpot(@PathVariable("id") Long id, Model model) {
+        Spot spot = spotDao.findById(id).get();
         model.addAttribute("spot", spot);
         model.addAttribute("comment", new Comment());
         model.addAttribute("comments", commentDao.findAllBySpot(spot));
@@ -65,12 +64,16 @@ public class SpotController {
 
     }
 
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
+    public String supprimerCommentaire(@PathVariable("id") Long id, Model model){
+        model.addAttribute("comment", new Comment());
+        commentDao.deleteById(id);
 
-
-
-
-
-
+        return "redirect:/afficheSpot/{id}";
     }
+
+
+
+}
 
 
