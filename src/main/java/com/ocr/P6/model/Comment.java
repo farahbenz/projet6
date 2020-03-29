@@ -34,6 +34,7 @@ public class Comment {
     public Comment() {
     }
 
+
     public Long getId() {
         return id;
     }
@@ -42,11 +43,11 @@ public class Comment {
         this.id = id;
     }
 
-    public String getCommentaire() {
-        return commentaire;
+    public String getCommentaire(String commentaire) {
+        return this.commentaire;
     }
 
-    public void setCommentaire(String commentaire) {
+    public void setCommentaire() {
         this.commentaire = commentaire;
     }
 
@@ -62,7 +63,7 @@ public class Comment {
         return dateParution;
     }
 
-    public void setDateParution(Date dateParution) {
+    public void setDateParution() {
         this.dateParution = dateParution;
     }
 
@@ -72,5 +73,14 @@ public class Comment {
 
     public void setSpot(Spot spot) {
         this.spot = spot;
+    }
+
+
+    public String getCommentaire() {
+        return commentaire;
+    }
+
+    public String setCommentaire(String commentaire) {
+        return commentaire;
     }
 }

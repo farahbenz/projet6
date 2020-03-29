@@ -4,10 +4,13 @@ import com.ocr.P6.model.Comment;
 import com.ocr.P6.model.Spot;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
 
 import java.util.List;
 
 
+@Repository
 public interface CommentDao extends JpaRepository<Comment, Long> {
     @Override
     List<Comment>findAll();
@@ -20,5 +23,6 @@ public interface CommentDao extends JpaRepository<Comment, Long> {
 
     List<Comment> findAllBySpot(Spot spot);
 
+    Comment save(String commentaire);
 
 }

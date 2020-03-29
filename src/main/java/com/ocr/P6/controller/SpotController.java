@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 
+
 @Controller
 public class SpotController {
 
@@ -61,19 +62,7 @@ public class SpotController {
         model.addAttribute("comment", new Comment());
         model.addAttribute("comments", commentDao.findAllBySpot(spot));
         return "afficheSpot";
-
     }
-
-    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
-    public String supprimerCommentaire(@PathVariable("id") Long id, Model model){
-        model.addAttribute("comment", new Comment());
-        commentDao.deleteById(id);
-
-        return "redirect:/afficheSpot/{id}";
-    }
-
-
-
 }
 
 

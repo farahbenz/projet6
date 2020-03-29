@@ -127,14 +127,7 @@
                         <td>${com.auteur}</td>
                         <td>${com.commentaire}</td>
                         <td>${com.dateParution}</td>
-<%--                        <td> <form th:action="@{/commentaire/}"  method="get">--%>
-<%--                        <button type="submit" class = "btn btn-primary btn-sm" >Modifier</button>--%>
-<%--                    </form></td>--%>
-<%--                        <td>--%>
-<%--                            <form th:action="@{/supprimer-commentaire}" th:object="${comment}" method="post">--%>
-<%--                                <input type="submit" value="Delete" class = "btn btn-danger btn-sm"/>--%>
-<%--                            </form>--%>
-<%--                        </td>--%>
+                        <td><a href="${pageContext.request.contextPath }/updateComment/${com.id}">Modifier</a></td>
                         <td>
                             <a href="${pageContext.request.contextPath }/delete/${com.id}" onclick="return confirm('Êtes vous sur de vouloir supprimer ce commentaire?')">Delete</a>
                         </td>
