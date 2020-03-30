@@ -23,6 +23,5 @@ public interface CommentDao extends JpaRepository<Comment, Long> {
 
     List<Comment> findAllBySpot(Spot spot);
 
-    Comment save(String commentaire);
 
 }

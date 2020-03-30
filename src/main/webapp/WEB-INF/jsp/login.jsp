@@ -13,7 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Les amis de l'escalade</title>
+    <title>Authentification</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -65,31 +65,23 @@
             <div class="card card-signin flex-row my-5">
 
                 <div class="card-body">
-                    <h5 class="card-title text-center">S'inscrire</h5>
-                    <th:form modelAttribute="user" action="/inscription" class="form-signin"  method="post">
+                    <h5 class="card-title text-center">Se connecter</h5>
+                    <th:form methode="post" action="/login">
 
 
                         <div class="form-label-group">
                             <label>Identifiant</label>
-                            <th:input path="username" type="text" class="form-control" />
+                            <input name="username" type="text"/>
                         </div>
-
-                        <div class="form-label-group">
-                            <label>Email</label>
-                            <th:input path="email" type="email" class="form-control" />
-                        </div>
-
-                        <hr>
 
                         <div class="form-label-group">
                             <label>Password</label>
-                            <th:input path="password" type="password" class="form-control" />
+                            <input name="password" type="password"/>
                         </div>
 
                         <hr>
 
-                        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">S'enregistrer</button>
-                        <a class="d-block text-center mt-2 small" href="/connexion">Se connecter</a>
+                        <input class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" value="Se connecter">
                         <hr class="my-4">
 
                     </th:form>

@@ -31,6 +31,7 @@ public class Comment {
         this.spot = spot;
     }
 
+
     public Comment() {
     }
 

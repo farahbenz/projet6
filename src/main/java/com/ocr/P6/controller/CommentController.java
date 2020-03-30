@@ -49,26 +49,26 @@ public class CommentController {
     }
 
 
-    /**
-     * Méthode qui va permettre la modification d'un commentaire
-     */
-
-    @RequestMapping(value = "/updateComment/{id}", method = RequestMethod.GET)
-    public String afficheCommentaire(@PathVariable("id")Long id, Model model) {
-        Comment comment = commentDao.findById(id).get();
-        model.addAttribute("comment", comment);
-        return "updateComment";
-    }
-
-    /**
-     * Méthode qui va permettre l'enregistrement de la modification d'un commentaire
-     */
-
-    @RequestMapping(value = "/updateComment", method = RequestMethod.POST)
-    public String updateCommentaire(Comment comment) {
-        commentDao.save(comment);
-        return "spots";
-    }
+//    /**
+//     * Méthode qui va permettre la modification d'un commentaire
+//     */
+//
+//    @RequestMapping(value = "/updateComment/{id}", method = RequestMethod.GET)
+//    public String afficheCommentaire(@PathVariable("id")Long id, Model model) {
+//        Comment comment = commentDao.findById(id).get();
+//        model.addAttribute("comment", comment);
+//        return "updateComment";
+//    }
+//
+//    /**
+//     * Méthode qui va permettre l'enregistrement de la modification d'un commentaire
+//     */
+//
+//    @RequestMapping(value = "/updateComment", method = RequestMethod.POST)
+//    public String updateCommentaire(Comment comment) {
+//        commentDao.save(comment);
+//        return "spots";
+//    }
 
 
 
