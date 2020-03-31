@@ -1,5 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="th" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 
@@ -40,7 +41,7 @@
   </button>
 
   <div class="button-signup">
-    <a class="btn btn-primary" href="/inscription" role="button">Se connecter</a>
+    <a class="btn btn-primary" href="/inscription" role="button">S'inscrire</a>
   </div>
 
   <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -72,17 +73,16 @@
       <p class="text-black-50">Nous réunissons les passionnés d'escalade de la France entière dans le partage dans cette discipline. Vous recherchez un site de grimpe ? Vous êtes au bon endroit! Vous pouvez aussi partager vos expériences concernant un site ou mettre en ligne les topos que vous possèdez! N'attendez plus! <a href="/inscription">Inscrivez-vous</a>
       </p>
 
-      <form>
+      <form action="/search" method="get">
         <div class="form-row">
           <div class="col-12 col-md-9 mb-2 mb-md-0">
-            <input type="input" class="form-control form-control-lg" placeholder="Entrer une region">
-          </div>
-          <div class="col-12 col-md-3">
-            <button type="submit" class="btn btn-block btn-lg btn-primary">Rechercher</button>
+            <input type="text" name="nom" class="form-control form-control-lg" placeholder="Entrer une region">
+            <input type="text" name="type" class="form-control form-control-lg" placeholder="Entrer un type ">
+           <hr>
+            <button class="btn btn-primary" value="Search" role="button" >Trouver un spot</button>
           </div>
         </div>
       </form>
-
 
     </div>
   </div>

@@ -5,8 +5,6 @@ import com.ocr.P6.model.Spot;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-
-
 import java.util.List;
 
 
@@ -22,6 +20,5 @@ public interface CommentDao extends JpaRepository<Comment, Long> {
     List<Comment> findAll(Sort sort);
 
     List<Comment> findAllBySpot(Spot spot);
-
 
 }

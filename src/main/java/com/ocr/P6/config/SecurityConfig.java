@@ -41,12 +41,22 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/afficheSpot/{id}").permitAll()
                 .antMatchers("/contact").permitAll()
                 .antMatchers("/afficheSpot").permitAll()
+                .antMatchers("/updateComment/{id}").permitAll()
+                .antMatchers("/recherche").permitAll()
+                .antMatchers("/search").permitAll()
+                .antMatchers("/delete/{id}").access("hasRole('ROLE_USER')")
+                .antMatchers("/updateComment/{id}").access("hasRole('ROLE_USER')")
                 .anyRequest()
                 .authenticated()
                 .and()
                 .formLogin()
                 .loginPage("/login")
                 .usernameParameter("username").passwordParameter("password")
+                .permitAll()
+                .and()
+                .logout()
+                .invalidateHttpSession(true)
+                .logoutUrl("/logout")
                 .permitAll();
     }
 

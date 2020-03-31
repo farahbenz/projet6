@@ -50,7 +50,16 @@
   margin-left: 80px;
  }
 
- /* ABOUT SECTION */
+html{
+ height: 100%;
+}
+body {
+ height: 100%;
+ margin: 0;
+ padding: 0;
+}
+
+/* ABOUT SECTION */
 
  .color-font-acceuil
  {

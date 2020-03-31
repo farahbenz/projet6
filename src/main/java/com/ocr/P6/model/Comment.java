@@ -23,14 +23,12 @@ public class Comment {
     @JoinColumn(name = "idSpot")
     private Spot spot;
 
-
     public Comment(String commentaire, String auteur, Date dateParution, Spot spot) {
         this.commentaire = commentaire;
         this.auteur = auteur;
         this.dateParution = dateParution;
         this.spot = spot;
     }
-
 
     public Comment() {
     }
@@ -44,11 +42,11 @@ public class Comment {
         this.id = id;
     }
 
-    public String getCommentaire(String commentaire) {
-        return this.commentaire;
+    public String getCommentaire() {
+        return commentaire;
     }
 
-    public void setCommentaire() {
+    public void setCommentaire(String commentaire) {
         this.commentaire = commentaire;
     }
 
@@ -64,7 +62,7 @@ public class Comment {
         return dateParution;
     }
 
-    public void setDateParution() {
+    public void setDateParution(Date dateParution) {
         this.dateParution = dateParution;
     }
 
@@ -74,14 +72,5 @@ public class Comment {
 
     public void setSpot(Spot spot) {
         this.spot = spot;
-    }
-
-
-    public String getCommentaire() {
-        return commentaire;
-    }
-
-    public String setCommentaire(String commentaire) {
-        return commentaire;
     }
 }

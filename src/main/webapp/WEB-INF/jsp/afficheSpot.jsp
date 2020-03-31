@@ -40,7 +40,7 @@
         </button>
 
         <div class="button-signup">
-            <a class="btn btn-primary" href="/inscription" role="button">Se connecter</a>
+            <a class="btn btn-primary" href="/inscription" role="button">S'inscrire</a>
         </div>
 
         <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -117,6 +117,7 @@
                         <th>Date</th>
                         <th>Modifier</th>
                         <th>Supprimer</th>
+                        <th>O.A.E</th>
                     </tr>
 
 

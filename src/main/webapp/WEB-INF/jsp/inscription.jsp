@@ -13,7 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Les amis de l'escalade</title>
+    <title>Inscription</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -89,7 +89,7 @@
                         <hr>
 
                         <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">S'enregistrer</button>
-                        <a class="d-block text-center mt-2 small" href="/connexion">Se connecter</a>
+                        <a class="d-block text-center mt-2 small" href="/login">Se connecter</a>
                         <hr class="my-4">
 
                     </th:form>

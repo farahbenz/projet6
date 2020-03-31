@@ -13,7 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Spots</title>
+    <title>Modifier un commentaire</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -39,10 +39,6 @@
             <i class="fas fa-bars"></i>
         </button>
 
-        <div class="button-signup">
-            <a class="btn btn-primary" href="/inscription" role="button">Se connecter</a>
-        </div>
-
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
@@ -62,42 +58,41 @@
     </div>
 </nav>
 
+<%--<div class="container">--%>
+<%--    <div class="row">--%>
+<%--        <div class="col-lg-10 col-xl-9 mx-auto">--%>
+<%--            <div class="card card-signin flex-row my-5">--%>
 
-<div class="container">
-    <div class="row">
-        <div class="col-lg-10 col-xl-9 mx-auto">
-            <div class="card card-signin flex-row my-5">
-
-                <div class="card-body">
-                    <h5 class="card-title text-center">Ajouter un commentaire</h5>
-
-
-                    <th:form modelAttribute="comment" action="${pageContext.request.contextPath }/updateComment" class="form-signin"  method="post">
+<%--                <div class="card-body">--%>
+<%--                    <h5 class="card-title text-center">Ajouter un commentaire</h5>--%>
 
 
-                        <div class="form-label-group">
+<%--                    <th:form modelAttribute="comment" action="${pageContext.request.contextPath }/updateComment" class="form-signin"  method="post">--%>
 
-                            <tr>
-                            <td>Commentaire</td>
-                            <td>
-                            <th:input path="commentaire" />
-                            </td>
-                            </tr>
-                        </div>
 
-                        <hr>
-                        <tr>
-                            <td>
-                        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Soumettre ce commentaire</button>
-                        <hr class="my-4">
-                            </td>
-                        </tr>
-                    </th:form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<%--                        <div class="form-label-group">--%>
+
+<%--                            <tr>--%>
+<%--                            <td>Commentaire</td>--%>
+<%--                            <td>--%>
+<%--                            <th:input path="commentaire" />--%>
+<%--                            </td>--%>
+<%--                            </tr>--%>
+<%--                        </div>--%>
+
+<%--                        <hr>--%>
+<%--                        <tr>--%>
+<%--                            <td>--%>
+<%--                        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Soumettre ce commentaire</button>--%>
+<%--                        <hr class="my-4">--%>
+<%--                            </td>--%>
+<%--                        </tr>--%>
+<%--                    </th:form>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+<%--        </div>--%>
+<%--    </div>--%>
+<%--</div>--%>
 <!-- Bootstrap core JavaScript -->
 <script src="/vendor/jquery/jquery.min.js"></script>
 <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

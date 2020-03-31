@@ -54,7 +54,12 @@ public class Spot {
         this.nombreDeVoies = nombreDeVoies;
         this.cotation = cotation;
         this.coordoneeGeo = coordoneeGeo;
+
     }
+
+    public Spot(String nom, String type) {
+    }
+
 
     public String getNom() {
         return nom;

@@ -40,7 +40,7 @@
         </button>
 
         <div class="button-signup">
-            <a class="btn btn-primary" href="/inscription" role="button">Se connecter</a>
+            <a class="btn btn-primary" href="/inscription" role="button">S'inscrire</a>
         </div>
 
         <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -113,6 +113,7 @@
                             <label>Orientation</label>
                             <th:input path="orientation" type="text" class="form-control"/>
                         </div>
+
 
                         <hr>
 

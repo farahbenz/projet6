@@ -41,12 +41,9 @@
       </button>
 
       <div class="button-signup">
-        <a class="btn btn-primary" href="/inscription" role="button">Se connecter</a>
+        <a class="btn btn-primary" href="/inscription" role="button">S'inscrire</a>
       </div>
 
-      <div class="button-signup">
-      <a class="btn btn-primary" href="/inscription" role="button">s'inscrire</a>
-    </div>
           
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
