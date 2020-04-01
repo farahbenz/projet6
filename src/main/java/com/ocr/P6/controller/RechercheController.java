@@ -18,7 +18,7 @@ public class RechercheController {
     private SpotDao spotDao;
 
     @RequestMapping(value = "/search", method = RequestMethod.GET)
-    public String getEmployeeByName(@RequestParam("nom") String nom,String type, ModelMap modelMap) {
+    public String getSpotByNomAndRegion(@RequestParam("nom") String nom,String type, ModelMap modelMap) {
         List<Spot> spots = spotDao.findSpotByRegion(nom, type);
         modelMap.addAttribute("spots", spots);
         return "recherche";

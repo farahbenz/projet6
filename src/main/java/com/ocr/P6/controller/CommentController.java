@@ -48,6 +48,22 @@ public class CommentController {
         return "afficheSpot";
     }
 
+    @RequestMapping(value = "/updateComment/{id}", method = RequestMethod.GET)
+    public String afficheCommentaire(@PathVariable("id")Long id, Model model) {
+        Comment comment = commentDao.findById(id).get();
+        model.addAttribute("comment", comment);
+        return "updateComment";
+    }
+
+
+    @RequestMapping(value = "/updateComment", method = RequestMethod.POST)
+    public String updateCommentaire( Comment comment) {
+        Comment commentPrecedent = commentDao.findById(comment.getId()).get();
+        commentPrecedent.setCommentaire(comment.getCommentaire());
+        commentDao.save(commentPrecedent);
+        return "spots";
+    }
+
 
 
 }

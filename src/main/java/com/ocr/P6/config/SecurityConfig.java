@@ -23,7 +23,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         auth.jdbcAuthentication()
         .dataSource(dataSource)
         .usersByUsernameQuery("select username, password,true from user where username=?")
-        .authoritiesByUsernameQuery("select username, 'ROLE_USER' from user where username=?");
+        .authoritiesByUsernameQuery("select role_role,true from user where role_role =?")
+        .rolePrefix("ROLE_");
 
 
     }
@@ -44,8 +45,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/updateComment/{id}").permitAll()
                 .antMatchers("/recherche").permitAll()
                 .antMatchers("/search").permitAll()
-                .antMatchers("/delete/{id}").access("hasRole('ROLE_USER')")
-                .antMatchers("/updateComment/{id}").access("hasRole('ROLE_USER')")
+                .antMatchers("/delete/{id}").access("hasRole('ROLE_1')")
                 .anyRequest()
                 .authenticated()
                 .and()

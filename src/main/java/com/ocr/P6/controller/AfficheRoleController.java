@@ -9,7 +9,6 @@ import org.springframework.security.core.context.SecurityContext;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.persistence.EntityManager;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
@@ -22,6 +21,10 @@ public class AfficheRoleController {
 
     @Autowired
     SpotDao spotDao;
+
+    /**
+     * Méthode qui va permettre d'afficher un utilisateur avec son role
+     */
 
     @RequestMapping(value = "/getLogedUser")
     public Map<String, Object> getLogedUser(HttpServletRequest httpServletRequest){
@@ -39,6 +42,7 @@ public class AfficheRoleController {
         return params;
 
     }
+
 
 
 }

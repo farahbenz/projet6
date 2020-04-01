@@ -26,10 +26,10 @@ public class SpotDaoImpl implements SpotDaoCustom {
         Root<Spot> spot = cq.from(Spot.class);
         List<Predicate> predicates = new ArrayList<>();
 
-        if (nom != null) {
+        if (nom != null && !nom.isEmpty()) {
             predicates.add(cb.equal(spot.get("nom"), nom));
         }
-        if (type != null) {
+        if (type != null && !type.isEmpty()) {
             predicates.add(cb.equal(spot.get("type"), type));
         }
 

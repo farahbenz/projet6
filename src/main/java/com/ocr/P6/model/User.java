@@ -15,9 +15,8 @@ public class User implements Serializable {
     private String password;
     private boolean actived;
 
-    @ManyToMany
-    @JoinTable(name="USERS_ROLES")
-    public Collection<Role> roles;
+    @OneToOne
+    private Role role;
 
 
     public User(String username, String email, String password) {
@@ -45,12 +44,12 @@ public class User implements Serializable {
         this.actived = actived;
     }
 
-    public Collection<Role> getRoles() {
-        return roles;
+    public Role getRole() {
+        return role;
     }
 
-    public void setRoles(Collection<Role> roles) {
-        this.roles = roles;
+    public void setRole(Role role) {
+        this.role = role;
     }
 
     public Long getId() {
