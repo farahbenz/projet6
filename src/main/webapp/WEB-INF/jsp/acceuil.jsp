@@ -74,20 +74,18 @@
       </p>
 
       <form action="/search" method="get">
-        <div class="form-row">
-          <div class="col-12 col-md-9 mb-2 mb-md-0">
-            <input type="text" name="nom" class="form-control form-control-lg" placeholder="Entrer une region">
-            <input type="text" name="type" class="form-control form-control-lg" placeholder="Entrer un type ">
+        <div class="form-row text-center">
+         
+            <input type="text" name="nom" class="form-control form-control-lg" placeholder="Entrer un lieux">
+            <input type="text" name="type" class="form-control form-control-lg" placeholder="Entrer un type (Falaise...)">
            <hr>
-            <button class="btn btn-primary" value="Search" role="button" >Trouver un spot</button>
+            <button class="btn btn-primary container" value="Search" role="button" >Trouver un spot</button>
           </div>
-        </div>
       </form>
 
     </div>
   </div>
 </div>
-
 
 <!-- Bootstrap core JavaScript -->
 <script src="vendor/jquery/jquery.min.js"></script>

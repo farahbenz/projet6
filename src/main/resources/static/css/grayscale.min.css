@@ -50,15 +50,6 @@
   margin-left: 80px;
  }
 
-html{
- height: 100%;
-}
-body {
- height: 100%;
- margin: 0;
- padding: 0;
-}
-
 /* ABOUT SECTION */
 
  .color-font-acceuil
@@ -236,3 +227,11 @@ position:absolute;
  }
  .text-primary{color:#64a19d!important}footer{padding:5rem 0}
 
+footer{
+
+ padding:3rem 0;
+ bottom: 0;
+ position: absolute;
+ left: 0;
+ right: 0
+}

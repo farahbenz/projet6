@@ -7,16 +7,19 @@ import java.util.Collection;
 @Entity
 public class User implements Serializable {
 
-    @Id
+
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Id
     private String username;
     private String email;
     private String password;
     private boolean actived;
 
-    @OneToOne
-    private Role role;
+    @ManyToMany
+    @JoinTable(name = "USERS_ROLE")
+    private Collection<Role> roles;
+
 
 
     public User(String username, String email, String password) {
@@ -44,12 +47,12 @@ public class User implements Serializable {
         this.actived = actived;
     }
 
-    public Role getRole() {
-        return role;
+    public Collection<Role> getRoles() {
+        return roles;
     }
 
-    public void setRole(Role role) {
-        this.role = role;
+    public void setRoles(Collection<Role> roles) {
+        this.roles = roles;
     }
 
     public Long getId() {

@@ -96,6 +96,13 @@
         </div>
     </div>
 </div>
+
+<footer class="bg-dark small text-center text-black-50">
+    <div class="container">
+        Copyright &copy; Les amis de l'escalade 2019
+    </div>
+</footer>
+
 <!-- Bootstrap core JavaScript -->
 <script src="/vendor/jquery/jquery.min.js"></script>
 <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

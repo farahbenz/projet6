@@ -2,10 +2,8 @@ package com.ocr.P6.controller;
 
 import com.ocr.P6.dao.CommentDao;
 import com.ocr.P6.dao.SpotDao;
-import com.ocr.P6.dao.UserDao;
 import com.ocr.P6.model.Comment;
 import com.ocr.P6.model.Spot;
-import com.ocr.P6.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,8 +19,6 @@ public class SpotController {
     private SpotDao spotDao;
     @Autowired
     private CommentDao commentDao;
-    @Autowired
-    private UserDao userDao;
 
     /**
      * Méthode qui va permettre la création d'un nouveau spot

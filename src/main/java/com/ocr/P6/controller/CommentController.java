@@ -31,9 +31,9 @@ public class CommentController {
      */
 
     @RequestMapping(value = "/afficheSpot", method = RequestMethod.POST)
-    public String enregistrerCommentaire(Comment comment) {
+    public String enregistrerCommentaire( Comment comment) {
         commentDao.save(comment);
-        return "afficheSpot";
+        return "redirect:/spots";
     }
 
     /**
@@ -45,7 +45,7 @@ public class CommentController {
         model.addAttribute("comment", new Comment());
         commentDao.deleteById(id);
 
-        return "afficheSpot";
+        return "redirect:/spots";
     }
 
     @RequestMapping(value = "/updateComment/{id}", method = RequestMethod.GET)
