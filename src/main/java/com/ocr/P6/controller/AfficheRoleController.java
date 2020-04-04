@@ -6,7 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.converter.json.MappingJacksonValue;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContext;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
@@ -19,8 +23,6 @@ import java.util.Map;
 @RestController
 public class AfficheRoleController {
 
-    @Autowired
-    SpotDao spotDao;
 
     /**
      * Méthode qui va permettre d'afficher un utilisateur avec son role
@@ -36,12 +38,18 @@ public class AfficheRoleController {
         for(GrantedAuthority ga:securityContext.getAuthentication().getAuthorities()){
             roles.add(ga.getAuthority());
         }
+
     Map<String, Object> params=new HashMap<>();
         params.put("username", username);
         params.put("roles",roles);
         return params;
 
     }
+
+
+
+
+
 
 
 

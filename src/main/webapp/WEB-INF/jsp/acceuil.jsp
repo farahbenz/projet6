@@ -1,5 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="s" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="th" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
@@ -40,9 +40,39 @@
     <i class="fas fa-bars"></i>
   </button>
 
-  <div class="button-signup">
-    <a class="btn btn-primary" href="/inscription" role="button">S'inscrire</a>
+  <div class="btn-group" >
+    <button type="button"  class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <c:choose>
+        <c:when test="${pageContext.request.userPrincipal.name == null}">
+         Se connecter
+        </c:when>
+        <c:otherwise>
+          ${pageContext.request.userPrincipal.name}
+        </c:otherwise>
+      </c:choose>
+    </button>
+    <div class="dropdown-menu">
+      <c:choose>
+        <c:when test="${pageContext.request.userPrincipal.name == null}">
+          <li>
+            <a class="dropdown-item" href="/inscription">S'inscrire</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="/login">Se connecter</a>
+          </li>
+        </c:when>
+        <c:otherwise>
+          <li>
+            <a class="dropdown-item" href="/Dashboard">Tableau de bord</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="/logout">Logout</a>
+          </li>
+        </c:otherwise>
+      </c:choose>
+    </div>
   </div>
+
 
   <div class="collapse navbar-collapse" id="navbarResponsive">
     <ul class="navbar-nav ml-auto">
@@ -50,10 +80,10 @@
         <a class="nav-link js-scroll-trigger" href="/acceuil">Acceuil</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link js-scroll-trigger" href="/spots">Spot</a>
+        <a class="nav-link js-scroll-trigger"  href="/spots">Spot</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link js-scroll-trigger" href="/topo">Topo</a>
+        <a class="nav-link js-scroll-trigger" onclick="alert('Accès réservé aux membres')" href="/topos">Topo</a>
       </li>
       <li class="nav-item">
         <a class="nav-link js-scroll-trigger" href="/contact">Contact</a>

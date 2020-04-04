@@ -45,6 +45,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/recherche").permitAll()
                 .antMatchers("/search").permitAll()
                 .antMatchers("/delete/{id}").access("hasRole('ROLE_admin')")
+                .antMatchers("/topos").access("hasRole('ROLE_admin')")
                 .anyRequest()
                 .authenticated()
                 .and()
