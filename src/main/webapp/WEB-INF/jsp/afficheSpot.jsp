@@ -176,6 +176,7 @@
                     <th:input path="spot" type="hidden" value="${spot.id}"/>
 
 
+
                     <hr>
 
                     <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Soumettre ce commentaire</button>
@@ -188,11 +189,7 @@
 </div>
 </div>
 
-<footer class="bg-dark small text-center text-black-50">
-    <div class="container">
-        Copyright &copy; Les amis de l'escalade 2019
-    </div>
-</footer>
+
 
 
 <!-- Bootstrap core JavaScript -->

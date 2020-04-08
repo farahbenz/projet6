@@ -114,10 +114,6 @@
                             <th:input path="orientation" type="text" class="form-control"/>
                         </div>
 
-
-
-
-
                         <hr>
 
                         <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Soumettre ce spot</button>

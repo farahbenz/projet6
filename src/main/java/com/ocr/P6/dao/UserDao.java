@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 
+
 @Repository
 public interface UserDao extends JpaRepository<User, Long> {
 
@@ -15,4 +16,7 @@ public interface UserDao extends JpaRepository<User, Long> {
 
     @Override
     <S extends User> S save(S s);
+
+
+    User findByUsername(String username);
 }

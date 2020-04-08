@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 
 @Controller
@@ -31,9 +31,10 @@ public class CommentController {
      */
 
     @RequestMapping(value = "/afficheSpot", method = RequestMethod.POST)
-    public String enregistrerCommentaire( Comment comment) {
+    public String enregistrerCommentaire( Comment comment, RedirectAttributes redirectAttrs) {
         commentDao.save(comment);
-        return "redirect:/spots";
+        redirectAttrs.addAttribute("idSpot", comment.getSpot().getId());
+        return "redirect:/afficheSpot/{idSpot}";
     }
 
     /**
@@ -48,6 +49,10 @@ public class CommentController {
         return "redirect:/spots";
     }
 
+    /**
+     * Méthode qui va permettre la modification d'un commentaire
+     */
+
     @RequestMapping(value = "/updateComment/{id}", method = RequestMethod.GET)
     public String afficheCommentaire(@PathVariable("id")Long id, Model model) {
         Comment comment = commentDao.findById(id).get();
@@ -57,11 +62,14 @@ public class CommentController {
 
 
     @RequestMapping(value = "/updateComment", method = RequestMethod.POST)
-    public String updateCommentaire( Comment comment) {
+    public String updateCommentaire( Comment comment, RedirectAttributes redirectAttrs) {
         Comment commentPrecedent = commentDao.findById(comment.getId()).get();
         commentPrecedent.setCommentaire(comment.getCommentaire());
         commentDao.save(commentPrecedent);
-        return "spots";
+        redirectAttrs.addAttribute("idSpot", commentPrecedent.getSpot().getId());
+        return "redirect:/afficheSpot/{idSpot}";
+
+
     }
 
 

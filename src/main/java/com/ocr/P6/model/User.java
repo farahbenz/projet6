@@ -10,14 +10,16 @@ public class User implements Serializable {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Id
     private String username;
+
     private String email;
     private String password;
     private boolean actived;
 
     @ManyToMany
-    @JoinTable(name = "USERS_ROLE")
+    @JoinTable(name = "USER_ROLE")
     private Collection<Role> roles;
 
 
@@ -35,9 +37,9 @@ public class User implements Serializable {
     }
 
 
-
     public User() {
     }
+
 
     public boolean isActived() {
         return actived;

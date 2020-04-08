@@ -23,8 +23,9 @@ public class Topo {
     private Date dateParution;
 
     @ManyToOne
-    @JoinColumn(name="idUser")
+    @JoinColumn(name = "username")
     private User user;
+
 
     @OneToOne
     private Booking booking;
@@ -37,7 +38,32 @@ public class Topo {
         this.dateParution = dateParution;
     }
 
+    public Topo(String nom, String description, String region, Boolean disponibilite, Date dateParution, User user) {
+        this.nom = nom;
+        this.description = description;
+        this.region = region;
+        this.disponibilite = disponibilite;
+        this.dateParution = dateParution;
+        this.user = user;
+    }
+
     public Topo() {
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Booking getBooking() {
+        return booking;
+    }
+
+    public void setBooking(Booking booking) {
+        this.booking = booking;
     }
 
     public Long getId() {
