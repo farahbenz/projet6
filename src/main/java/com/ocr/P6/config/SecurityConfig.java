@@ -16,8 +16,10 @@ import javax.sql.DataSource;
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(securedEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
     @Autowired
     DataSource dataSource;
+
     @Autowired
     public void globalConfig(AuthenticationManagerBuilder auth) throws Exception {
         auth.jdbcAuthentication()

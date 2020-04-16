@@ -1,17 +1,17 @@
 package com.ocr.P6.controller;
 
-import com.ocr.P6.dao.UserDao;
 import com.ocr.P6.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class UserController {
 
     @Autowired
-    private UserDao userDao;
+
 
     /**
      * Méthode qui va permettre la création d'un nouveau utilisateur
