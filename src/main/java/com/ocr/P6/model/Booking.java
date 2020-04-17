@@ -9,14 +9,21 @@ public class Booking {
     private Long id;
 
     @Column(name = "statut_reservation", nullable = false)
-    private String statutReservation;
+    private Boolean statutReservation;
 
-    @ManyToOne
-    @JoinColumn(name="idUser")
+    @OneToOne
+    @JoinColumn
     private User user;
 
-    public Booking(String statutReservation) {
+    @OneToOne
+    private Topo topo;
+
+    private String email;
+
+    public Booking(Boolean statutReservation, User user, Topo topo) {
         this.statutReservation = statutReservation;
+        this.user = user;
+        this.topo = topo;
     }
 
     public Booking() {
@@ -30,11 +37,35 @@ public class Booking {
         this.id = id;
     }
 
-    public String getStatutReservation() {
+    public Boolean getStatutReservation() {
         return statutReservation;
     }
 
-    public void setStatutReservation(String statutReservation) {
+    public void setStatutReservation(Boolean statutReservation) {
         this.statutReservation = statutReservation;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Topo getTopo() {
+        return topo;
+    }
+
+    public void setTopo(Topo topo) {
+        this.topo = topo;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

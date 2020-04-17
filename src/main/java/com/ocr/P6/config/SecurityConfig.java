@@ -25,7 +25,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         auth.jdbcAuthentication()
         .dataSource(dataSource)
         .usersByUsernameQuery("select username, password,true from user where username=?")
-        .authoritiesByUsernameQuery("select user_username, roles_role as role from users_role where user_username =?")
+        .authoritiesByUsernameQuery("select user_username, roles_role as role from user_role where user_username =?")
         .rolePrefix("ROLE_");
 
     }
@@ -43,16 +43,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/afficheSpot/{id}").permitAll()
                 .antMatchers("/contact").permitAll()
                 .antMatchers("/afficheSpot").permitAll()
-                .antMatchers("/updateComment/{id}").permitAll()
+                .antMatchers("/updateComment/{id}").access("hasRole('ROLE_admin') and ('ROLE_user')")
                 .antMatchers("/recherche").permitAll()
                 .antMatchers("/search").permitAll()
                 .antMatchers("/delete/{id}").access("hasRole('ROLE_admin')")
-                .antMatchers("/topos").access("hasRole('ROLE_admin')")
+                .antMatchers("/topos").permitAll()
+                .antMatchers("/modifierTag").access("hasRole('ROLE_admin')")
                 .anyRequest()
                 .authenticated()
                 .and()
                 .formLogin()
-                .loginPage("/login")
+                .loginPage("/login").failureUrl( "/login?error=true" )
                 .usernameParameter("username").passwordParameter("password")
                 .permitAll()
                 .and()
@@ -60,6 +61,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .invalidateHttpSession(true)
                 .logoutUrl("/logout")
                 .permitAll();
+
     }
 
     @SuppressWarnings("deprecation")

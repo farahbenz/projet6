@@ -52,7 +52,7 @@
                 <a class="nav-link js-scroll-trigger"  href="/spots">Spot</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" onclick="alert('Accès réservé aux membres')" href="/topos">Topo</a>
+                <a class="nav-link js-scroll-trigger"  href="/topos">Topo</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link js-scroll-trigger" href="/contact">Contact</a>

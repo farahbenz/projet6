@@ -3,17 +3,21 @@ package com.ocr.P6.controller;
 import com.ocr.P6.dao.CommentDao;
 import com.ocr.P6.model.Comment;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 
+
 @Controller
 public class CommentController {
 
     @Autowired
-    private CommentDao commentDao;
+    CommentDao commentDao;
+
 
     /**
      * Méthode qui va permettre la création d'un nouveau commentaire
@@ -32,6 +36,9 @@ public class CommentController {
 
     @RequestMapping(value = "/afficheSpot", method = RequestMethod.POST)
     public String enregistrerCommentaire( Comment comment, RedirectAttributes redirectAttrs) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String username = authentication.getName();
+        comment.setAuteur(username);
         commentDao.save(comment);
         redirectAttrs.addAttribute("idSpot", comment.getSpot().getId());
         return "redirect:/afficheSpot/{idSpot}";
@@ -71,6 +78,7 @@ public class CommentController {
 
 
     }
+
 
 
 

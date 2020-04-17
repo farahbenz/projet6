@@ -8,34 +8,30 @@ import java.util.Collection;
 public class User implements Serializable {
 
 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
+    private boolean actived = true;
     @Id
     private String username;
-
     private String email;
     private String password;
-    private boolean actived;
+
 
     @ManyToMany
     @JoinTable(name = "USER_ROLE")
     private Collection<Role> roles;
 
 
+    public User(boolean actived, String username, String email, String password) {
+        this.actived = actived;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
 
     public User(String username, String email, String password) {
         this.username = username;
         this.email = email;
         this.password = password;
     }
-
-    public User(String username, String password, boolean actived) {
-        this.username = username;
-        this.password = password;
-        this.actived = actived;
-    }
-
 
     public User() {
     }
@@ -55,14 +51,6 @@ public class User implements Serializable {
 
     public void setRoles(Collection<Role> roles) {
         this.roles = roles;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getUsername() {

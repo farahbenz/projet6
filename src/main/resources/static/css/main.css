@@ -13,16 +13,7 @@
 /* ==========================================================================
    #GRID
    ========================================================================== */
-.row {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
+
 
 .row-space {
   -webkit-box-pack: justify;
@@ -111,11 +102,7 @@ fieldset {
   border: 0;
 }
 
-button {
-  outline: none;
-  background: none;
-  border: none;
-}
+
 
 /* ==========================================================================
    #PAGE WRAPPER
@@ -170,11 +157,11 @@ h6 {
 }
 
 .bg-gra-01 {
-  background: -webkit-gradient(linear, left bottom, left top, from(#fbc2eb), to(#a18cd1));
-  background: -webkit-linear-gradient(bottom, #fbc2eb 0%, #a18cd1 100%);
-  background: -moz-linear-gradient(bottom, #fbc2eb 0%, #a18cd1 100%);
-  background: -o-linear-gradient(bottom, #fbc2eb 0%, #a18cd1 100%);
-  background: linear-gradient(to top, #fbc2eb 0%, #a18cd1 100%);
+  background: -webkit-gradient(linear, left bottom, left top, from(#526e69), to(#a3abb6));
+  background: -webkit-linear-gradient(bottom, #526e69 0%, #a3abb6 100%);
+  background: -moz-linear-gradient(bottom, #526e69 0%, #a3abb6 100%);
+  background: -o-linear-gradient(bottom, #526e69 0%, #a3abb6 100%);
+  background: linear-gradient(to top, #526e69 0%, #a3abb6 100%);
 }
 
 /* ==========================================================================
@@ -226,19 +213,7 @@ h6 {
 /* ==========================================================================
    #BUTTON
    ========================================================================== */
-.btn {
-  display: inline-block;
-  line-height: 40px;
-  padding: 0 33px;
-  font-family: Poppins, Arial, "Helvetica Neue", sans-serif;
-  cursor: pointer;
-  color: #fff;
-  -webkit-transition: all 0.4s ease;
-  -o-transition: all 0.4s ease;
-  -moz-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-  font-size: 18px;
-}
+
 
 .btn--radius {
   -webkit-border-radius: 3px;
@@ -496,7 +471,7 @@ input {
 }
 
 .card-3 .card-heading {
-  background: url("../images/bg-heading-03.jpg") top left/cover no-repeat;
+  background: url("../img/inscription.jpg") top left/cover no-repeat;
   display: table-cell;
   width: 50%;
 }

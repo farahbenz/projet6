@@ -2,13 +2,17 @@ package com.ocr.P6.controller;
 
 import com.ocr.P6.dao.CommentDao;
 import com.ocr.P6.dao.SpotDao;
+import com.ocr.P6.dao.UserDao;
 import com.ocr.P6.model.Comment;
 import com.ocr.P6.model.Spot;
+import com.ocr.P6.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 
 @Controller
@@ -19,6 +23,8 @@ public class SpotController {
     private SpotDao spotDao;
     @Autowired
     private CommentDao commentDao;
+    @Autowired
+    private UserDao userDao;
 
     /**
      * Méthode qui va permettre la création d'un nouveau spot
@@ -37,8 +43,11 @@ public class SpotController {
 
     @RequestMapping(value = "/ajoutSpot", method = RequestMethod.POST)
     public String enregistrerSpot(Spot spot) {
-        Spot newSpot = new Spot(spot.getNom(), spot.getNombreDeVoies(), spot.getCoordoneeGeo(), spot.getCotation(), spot.getHauteur(), spot.getOrientation(), spot.getSecteur(), spot.getType());
-        spotDao.save(newSpot);
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String username = authentication.getName();
+        User user = userDao.findByUsername(username);
+        spot.setUser(user);
+        spotDao.save(spot);
         return "redirect:/spots";
     }
 
@@ -63,6 +72,20 @@ public class SpotController {
         model.addAttribute("comments", commentDao.findAllBySpot(spot));
         return "afficheSpot";
     }
+
+    /**
+     * Methode qui permet de modifier le tag
+     */
+
+    @RequestMapping(value ="/modifierTag/{id}", method = RequestMethod.GET)
+    public String recupSpot(@PathVariable("id")Long id, RedirectAttributes redirectAttrs) {
+        Spot spot = spotDao.findById(id).get();
+        spot.setTag(!spot.isTag());
+        spotDao.save(spot);
+        redirectAttrs.addAttribute("idSpot",id);
+        return "redirect:/afficheSpot/{idSpot}";
+    }
+
 }
 
 

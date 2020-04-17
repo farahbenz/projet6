@@ -19,9 +19,9 @@ public class Spot {
     private String cotation;
     @Column(name = "coordonee_geo")
     private String coordoneeGeo;
+    private boolean tag;
 
     @ManyToOne
-    @JoinColumn(name="idUser")
     private User user;
 
     @OneToMany (mappedBy = "spot")
@@ -32,7 +32,7 @@ public class Spot {
     public Spot() {
     }
 
-    public Spot(String nom, String secteur, String type, String hauteur, String orientation, String nombreDeVoies, String cotation, String coordoneeGeo, User user, List<Comment> comments) {
+    public Spot(String nom, String secteur, String type, String hauteur, String orientation, String nombreDeVoies, String cotation, String coordoneeGeo, boolean tag, User user, List<Comment> comments) {
         this.nom = nom;
         this.secteur = secteur;
         this.type = type;
@@ -41,32 +41,12 @@ public class Spot {
         this.nombreDeVoies = nombreDeVoies;
         this.cotation = cotation;
         this.coordoneeGeo = coordoneeGeo;
+        this.tag = tag;
         this.user = user;
         this.comments = comments;
     }
 
-    public Spot(String nom, String nombreDeVoies, String coordoneeGeo, String cotation, String hauteur, String orientation, String secteur, String type) {
-        this.nom = nom;
-        this.secteur = secteur;
-        this.type = type;
-        this.hauteur = hauteur;
-        this.orientation = orientation;
-        this.nombreDeVoies = nombreDeVoies;
-        this.cotation = cotation;
-        this.coordoneeGeo = coordoneeGeo;
-
-    }
-
     public Spot(String nom, String type) {
-    }
-
-
-    public String getNom() {
-        return nom;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
     }
 
     public Long getId() {
@@ -75,6 +55,14 @@ public class Spot {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
     }
 
     public String getSecteur() {
@@ -133,4 +121,27 @@ public class Spot {
         this.coordoneeGeo = coordoneeGeo;
     }
 
+    public boolean isTag() {
+        return tag;
+    }
+
+    public void setTag(boolean tag) {
+        this.tag = tag;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
+    }
 }

@@ -6,9 +6,6 @@ import javax.persistence.*;
 @Table(name = "role")
 public class Role {
 
-
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
     @Id
     private String role;
 
@@ -21,14 +18,6 @@ public class Role {
     public Role() {
     }
 
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getRole() {
         return role;

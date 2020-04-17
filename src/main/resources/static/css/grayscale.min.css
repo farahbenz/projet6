@@ -2,6 +2,20 @@
  * Start Bootstrap - Grayscale v5.0.9 (https://startbootstrap.com/template-overviews/grayscale)
  * Copyright 2013-2019 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-grayscale/blob/master/LICENSE)*/
+
+html, body{
+ height : 100%;
+ margin: 0;
+ padding: 0;
+ min-width: 100%;
+ min-height: 120%;
+ background: -webkit-gradient(linear, left bottom, left top, from(#526e69), to(#a3abb6));
+ background: -webkit-linear-gradient(bottom, #526e69 0%, #a3abb6 100%);
+ background: -moz-linear-gradient(bottom, #526e69 0%, #a3abb6 100%);
+ background: -o-linear-gradient(bottom, #526e69 0%, #a3abb6 100%);
+ background: linear-gradient(to top, #526e69 0%, #a3abb6 100%);
+}
+
  #mainNav{min-height:56px;background-color:#3c6360 0 0}
  #mainNav .navbar-toggler{font-size:80%;padding:.75rem;color:#64a19d;border:1px solid #64a19d}
  #mainNav .navbar-toggler:focus{outline:0}
@@ -12,7 +26,7 @@
  {outline:0;background-color:transparent}
  @media (min-width:992px)
  {
- #mainNav{padding-top:0;padding-bottom:0;border-bottom:none;background-color:transparent;transition:background-color .3s ease-in-out}
+ #mainNav{padding-top:0;padding-bottom:0;border-bottom:none;background-color:rgba(0,0,0,0.1);transition:background-color .3s ease-in-out}
  #mainNav .navbar-brand{padding:.5rem 0;color:rgba(255,255,255,.5)}
  #mainNav .nav-link{transition:none;padding:2rem 1.5rem;color:rgba(255,255,255,.5)}
  #mainNav .nav-link:hover{color:rgba(255,255,255,.75)}
@@ -40,11 +54,12 @@
  .masthead{height:100vh;padding:0}
  .masthead h1{font-size:6.5rem;line-height:6.5rem;letter-spacing:.8rem}
  .masthead h2{max-width:30rem;font-size:1.25rem}}
+
  .btn{box-shadow:0 .1875rem .1875rem 0 rgba(0,0,0,.1)!important;padding:1.25rem 2rem;font-family:'Varela Round';font-size:80%;text-transform:uppercase;letter-spacing:.15rem;border:0}
- .btn-primary{background-color:#64a19d}
- .btn-primary:hover{background-color:#4f837f}
- .btn-primary:focus{background-color:#4f837f;color:#fff}
- .btn-primary:active{background-color:#467370!important}
+ .btn-primary{background-color:#324D47}
+ .btn-primary:hover{background-color:#3F554E}
+ .btn-primary:focus{background-color:#3F554E;color:#3F554E}
+ .btn-primary:active{background-color:#3F554E!important}
  .button-signup
  {
   margin-left: 80px;
@@ -116,10 +131,16 @@
 
 
 
- .bg-dark-3-light
- {
- background-color:#c5ced6 !important
- }
+ /*.bg-dark-3-light*/
+ /*{*/
+
+ /* background: -webkit-gradient(linear, left bottom, left top, from(#526e69), to(#a3abb6));*/
+ /* background: -webkit-linear-gradient(bottom, #526e69 0%, #a3abb6 100%);*/
+ /* background: -moz-linear-gradient(bottom, #526e69 0%, #a3abb6 100%);*/
+ /* background: -o-linear-gradient(bottom, #526e69 0%, #a3abb6 100%);*/
+ /* background: linear-gradient(to top, #526e69 0%, #a3abb6 100%);*/
+
+ /*}*/
 
 
  .contact-section{
@@ -129,14 +150,14 @@
 
  .contact-section .card{
 
- 	  width:80%;
+    width:80%;
     padding: 30px;
     border-radius: 10px;
     margin-bottom: 20px;
     text-align: center;
     margin: auto;
     border:0;
-    border:0;border-bottom:.25rem solid #
+    border:0;border-bottom:.25rem solid
     background-color:;
 
 
@@ -167,7 +188,10 @@
  	color:rgba(255,255,255,.3)
  }
  .contact-section .social a:hover{color:rgba(255,255,255,.5)}
- .contact-section .social a:active{color:#fff}body{font-family:Nunito;letter-spacing:.0625em}a{color:#64a19d}a:focus,a:hover{text-decoration:none;color:#3c6360}
+ .contact-section .social a:active{color:#fff}
+body {font-family:Nunito;letter-spacing:.0625em}
+a{color:#64a19d}
+a:focus,a:hover{text-decoration:none;color:#3c6360}
  
 .map-responsive {
 overflow:hidden;
@@ -227,11 +251,36 @@ position:absolute;
  }
  .text-primary{color:#64a19d!important}footer{padding:5rem 0}
 
-footer{
 
- padding:3rem 0;
+
+.main-footer {
+ background-color:rgba(0,0,0,0.5);
+ width: 100%;
+ height: auto;
+ position: fixed;
  bottom: 0;
- position: absolute;
  left: 0;
- right: 0
+ right: 0;
+ padding:2rem 0;
+
+}
+
+.form-row{
+ width: 50%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 25vh;
+ margin: 0 auto;
+ min-height: 25vh;
+
+
+}
+
+.button-signup{
+ padding-top: 5rem;
+}
+
+.espace{
+ padding-top: 3rem;
 }

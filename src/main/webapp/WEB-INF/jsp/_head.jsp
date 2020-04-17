@@ -15,3 +15,12 @@
 
 <!-- Custom styles for this template -->
 <link href="/css/grayscale.min.css" rel="stylesheet">
+
+<!-- Vendor CSS-->
+<link href="/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+<link href="/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+<link href="/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+<link href="/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+
+<!-- Main CSS-->
+<link href="/css/main.css" rel="stylesheet" media="all">

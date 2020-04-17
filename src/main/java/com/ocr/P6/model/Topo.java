@@ -14,19 +14,13 @@ public class Topo {
     private String nom;
     private String description;
     private String region;
-
-    @Column(name = "etat_topo")
-    private Boolean disponibilite = true;
-
+    private Boolean disponibilite = false;
     @UpdateTimestamp
     @Temporal(TemporalType.DATE)
     private Date dateParution;
 
     @ManyToOne
-    @JoinColumn(name = "username")
     private User user;
-
-
     @OneToOne
     private Booking booking;
 
