@@ -37,21 +37,6 @@ public class User implements Serializable {
     }
 
 
-    public boolean isActived() {
-        return actived;
-    }
-
-    public void setActived(boolean actived) {
-        this.actived = actived;
-    }
-
-    public Collection<Role> getRoles() {
-        return roles;
-    }
-
-    public void setRoles(Collection<Role> roles) {
-        this.roles = roles;
-    }
 
     public String getUsername() {
         return username;
@@ -63,10 +48,6 @@ public class User implements Serializable {
 
     public String getEmail() {
         return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public String getPassword() {

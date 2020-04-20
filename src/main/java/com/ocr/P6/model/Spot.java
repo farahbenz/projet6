@@ -69,10 +69,6 @@ public class Spot {
         return secteur;
     }
 
-    public void setSecteur(String secteur) {
-        this.secteur = secteur;
-    }
-
     public String getType() {
         return type;
     }
@@ -83,10 +79,6 @@ public class Spot {
 
     public String getHauteur() {
         return hauteur;
-    }
-
-    public void setHauteur(String hauteur) {
-        this.hauteur = hauteur;
     }
 
     public String getOrientation() {
@@ -101,24 +93,12 @@ public class Spot {
         return nombreDeVoies;
     }
 
-    public void setNombreDeVoies(String nombreDeVoies) {
-        this.nombreDeVoies = nombreDeVoies;
-    }
-
     public String getCotation() {
         return cotation;
     }
 
-    public void setCotation(String cotation) {
-        this.cotation = cotation;
-    }
-
     public String getCoordoneeGeo() {
         return coordoneeGeo;
-    }
-
-    public void setCoordoneeGeo(String coordoneeGeo) {
-        this.coordoneeGeo = coordoneeGeo;
     }
 
     public boolean isTag() {

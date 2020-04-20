@@ -31,7 +31,7 @@ public class SpotController {
      */
 
     @RequestMapping(value = "/ajoutSpot", method = RequestMethod.GET)
-    public String ajouterSpot(Model model) {
+    public String creationSpot(Model model) {
         Spot spot = new Spot();
         model.addAttribute("spot", spot);
         return "ajoutSpot";
@@ -55,7 +55,7 @@ public class SpotController {
      * Méthode qui va permettre l'affichage des spots.
      */
     @RequestMapping("/spots")
-    public String affichage(Model model) {
+    public String affichageSpots(Model model) {
         model.addAttribute("spots", spotDao.findAll());
         return "spots";
     }
@@ -65,7 +65,7 @@ public class SpotController {
      */
 
     @RequestMapping(value = "/afficheSpot/{id}")
-    public String getIdSpot(@PathVariable("id") Long id, Model model) {
+    public String reucpererIdSpot(@PathVariable("id") Long id, Model model) {
         Spot spot = spotDao.findById(id).get();
         model.addAttribute("spot", spot);
         model.addAttribute("comment", new Comment());
@@ -77,8 +77,8 @@ public class SpotController {
      * Methode qui permet de modifier le tag
      */
 
-    @RequestMapping(value ="/modifierTag/{id}", method = RequestMethod.GET)
-    public String recupSpot(@PathVariable("id")Long id, RedirectAttributes redirectAttrs) {
+    @RequestMapping(value ="/tag/modifier/{id}", method = RequestMethod.GET)
+    public String modifierTag(@PathVariable("id")Long id, RedirectAttributes redirectAttrs) {
         Spot spot = spotDao.findById(id).get();
         spot.setTag(!spot.isTag());
         spotDao.save(spot);

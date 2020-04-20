@@ -9,20 +9,23 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class AffichageController {
 
+    /**
+     * Méthodes qui vont permettre d'afficher ses différentes pages
+     */
+
     @RequestMapping(value = "/index", method = RequestMethod.GET)
-    public String index(){
+    public String affichageIndex(){
         return "index";
     }
     @RequestMapping(value = "/acceuil", method = RequestMethod.GET)
-    public String acceuil(){
+    public String affichageAcceuil(){
         return "acceuil";
     }
 
     @RequestMapping(value = "/contact", method = RequestMethod.GET)
-    public String contact(){
+    public String AfficheContact(){
         return "contact";
     }
-
 
     @RequestMapping(value = "/DropMenu", method = RequestMethod.GET)
     public String ajouterSpot(Model model) {
@@ -30,5 +33,4 @@ public class AffichageController {
         model.addAttribute("user", user);
         return "acceuil";
     }
-
 }

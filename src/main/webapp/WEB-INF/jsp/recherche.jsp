@@ -10,7 +10,7 @@
 
 </head>
 
-<body class="inscription-section bg-dark-3-light">
+<body class="espaceSection">
 
 <%@include file="_navbar.jsp" %>
 

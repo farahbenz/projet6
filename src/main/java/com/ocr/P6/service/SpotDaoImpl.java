@@ -1,4 +1,4 @@
-package com.ocr.P6.dao;
+package com.ocr.P6.service;
 
 import com.ocr.P6.model.Spot;
 import org.springframework.beans.factory.annotation.Autowired;

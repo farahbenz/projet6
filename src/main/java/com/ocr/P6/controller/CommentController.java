@@ -23,8 +23,8 @@ public class CommentController {
      * Méthode qui va permettre la création d'un nouveau commentaire
      */
 
-    @RequestMapping(value = "/afficheSpot", method = RequestMethod.GET)
-    public String ajouterCommentaire(Model model) {
+    @RequestMapping(value = "/commentaire/nouveau", method = RequestMethod.GET)
+    public String creationCommentaire(Model model) {
         Comment comment = new Comment();
         model.addAttribute("comment", comment);
         return "afficheSpot";
@@ -34,49 +34,47 @@ public class CommentController {
      * Méthode qui va permettre l'enregistrement d'un commentaire
      */
 
-    @RequestMapping(value = "/afficheSpot", method = RequestMethod.POST)
+    @RequestMapping(value = "/commentaire/enregistrement", method = RequestMethod.POST)
     public String enregistrerCommentaire( Comment comment, RedirectAttributes redirectAttrs) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String username = authentication.getName();
         comment.setAuteur(username);
         commentDao.save(comment);
         redirectAttrs.addAttribute("idSpot", comment.getSpot().getId());
-        return "redirect:/afficheSpot/{idSpot}";
+        return "redirect:/spot/afficher/{idSpot}";
     }
 
     /**
      * Méthode qui va permettre la suppresion d'un commentaire
      */
 
-    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/commentaire/supprimer/{id}", method = RequestMethod.GET)
     public String supprimerCommentaire(@PathVariable("id") Long id, Model model){
         model.addAttribute("comment", new Comment());
         commentDao.deleteById(id);
 
-        return "redirect:/spots";
+        return "redirect:/spot/afficher";
     }
 
     /**
      * Méthode qui va permettre la modification d'un commentaire
      */
 
-    @RequestMapping(value = "/updateComment/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/commentaire/modifier/{id}", method = RequestMethod.GET)
     public String afficheCommentaire(@PathVariable("id")Long id, Model model) {
         Comment comment = commentDao.findById(id).get();
         model.addAttribute("comment", comment);
-        return "updateComment";
+        return "modifCommentaire";
     }
 
 
-    @RequestMapping(value = "/updateComment", method = RequestMethod.POST)
-    public String updateCommentaire( Comment comment, RedirectAttributes redirectAttrs) {
+    @RequestMapping(value = "/commentaire/modifier", method = RequestMethod.POST)
+    public String modifCommentaire( Comment comment, RedirectAttributes redirectAttrs) {
         Comment commentPrecedent = commentDao.findById(comment.getId()).get();
         commentPrecedent.setCommentaire(comment.getCommentaire());
         commentDao.save(commentPrecedent);
         redirectAttrs.addAttribute("idSpot", commentPrecedent.getSpot().getId());
-        return "redirect:/afficheSpot/{idSpot}";
-
-
+        return "redirect:/spot/afficher/{idSpot}";
     }
 
 

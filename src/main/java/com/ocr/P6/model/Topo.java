@@ -21,8 +21,8 @@ public class Topo {
 
     @ManyToOne
     private User user;
-    @OneToOne
-    private Booking booking;
+
+    private String bookingUser;
 
     public Topo(String nom, String description, String region, Boolean disponibilite, Date dateParution) {
         this.nom = nom;
@@ -44,20 +44,20 @@ public class Topo {
     public Topo() {
     }
 
+    public String getBookingUser() {
+        return bookingUser;
+    }
+
+    public void setBookingUser(String bookingUser) {
+        this.bookingUser = bookingUser;
+    }
+
     public User getUser() {
         return user;
     }
 
     public void setUser(User user) {
         this.user = user;
-    }
-
-    public Booking getBooking() {
-        return booking;
-    }
-
-    public void setBooking(Booking booking) {
-        this.booking = booking;
     }
 
     public Long getId() {
@@ -88,10 +88,6 @@ public class Topo {
         return region;
     }
 
-    public void setRegion(String region) {
-        this.region = region;
-    }
-
     public Boolean getDisponibilite() {
         return disponibilite;
     }
@@ -102,10 +98,6 @@ public class Topo {
 
     public Date getDateParution() {
         return dateParution;
-    }
-
-    public void setDateParution(Date dateParution) {
-        this.dateParution = dateParution;
     }
 
 }

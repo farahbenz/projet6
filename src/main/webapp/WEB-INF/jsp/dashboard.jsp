@@ -12,7 +12,7 @@
 
 </head>
 
-<body class="inscription-section bg-dark-3-light">
+<body class="espaceSection">
 
 <%@include file="_navbar.jsp" %>
 
@@ -41,7 +41,7 @@
                     <td>
                         <c:choose>
                             <c:when test="${topo.disponibilite == true}">
-                                Reservation Demandée
+                                Reservation en cours
                             </c:when>
                             <c:otherwise>
 
@@ -52,9 +52,9 @@
                     <td>
                     <c:choose>
                         <c:when test="${topo.disponibilite == true}">
-                            <a class="btn-primary" href="${pageContext.request.contextPath }/validite/${topo.id}"> rendre indisponible </a>
+                            <a class="btn-primary" href="${pageContext.request.contextPath }/reservation/valider/${topo.id}"> Envoi email </a>
                         <hr/>
-                            <a class="btn-primary" href="${pageContext.request.contextPath }/validiteNul/${topo.id}"> remettre en ligne </a>
+                            <a class="btn-primary" href="${pageContext.request.contextPath }/reservation/annuler/${topo.id}"> remettre en ligne </a>
                         </c:when>
                         <c:otherwise>
 

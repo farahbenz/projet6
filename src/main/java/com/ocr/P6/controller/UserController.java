@@ -30,10 +30,10 @@ public class UserController {
      */
 
     @RequestMapping(value = "/inscription", method = RequestMethod.POST)
-    public String enregistrerClient(User user){
+    public String enregistrerUtilisateur(User user){
         User newUser = new User(user.getUsername(), user.getEmail(), user.getPassword());
         userDao.save(newUser);
-        return "index";
+        return "acceuil";
     }
 
     }

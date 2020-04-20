@@ -11,7 +11,7 @@
 
 </head>
 
-<body class="inscription-section" >
+<body class="espaceSection" >
 
 <%@include file="_navbar.jsp" %>
 
@@ -64,7 +64,7 @@
 
                 </td>
 
-                <td><a class="btn-primary" href="${pageContext.request.contextPath }/modifierTag/${spot.id}">Modifer</a>
+                <td><a class="btn-primary" href="${pageContext.request.contextPath }/tag/modifier/${spot.id}">Modifer</a>
                 </td>
             </tr>
 
@@ -95,9 +95,9 @@
                         <td>${com.auteur}</td>
                         <td>${com.commentaire}</td>
                         <td>${com.dateParution}</td>
-                        <td><a class="btn-primary" href="${pageContext.request.contextPath }/updateComment/${com.id}">Modifier</a></td>
+                        <td><a class="btn-primary" href="${pageContext.request.contextPath }/commentaire/modifier/${com.id}">Modifier</a></td>
                         <td>
-                            <a class="btn-primary" href="${pageContext.request.contextPath }/delete/${com.id}" onclick="return confirm('Êtes vous sur de vouloir supprimer ce commentaire?')">Delete</a>
+                            <a class="btn-primary" href="${pageContext.request.contextPath }/commentaire/supprimer/${com.id}" onclick="return confirm('Êtes vous sur de vouloir supprimer ce commentaire?')">Delete</a>
                         </td>
 
 
@@ -115,7 +115,7 @@
                 <h2 class="card-title text-center">Ajouter un commentaire</h2>
 
 
-                <th:form modelAttribute="comment" action="/afficheSpot" class="form-signin"  method="post">
+                <th:form modelAttribute="comment" action="/commentaire/enregistrement" class="form-signin"  method="post">
 
 
                     <div class="form-label-group">

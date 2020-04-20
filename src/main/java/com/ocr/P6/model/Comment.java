@@ -62,10 +62,6 @@ public class Comment {
         return dateParution;
     }
 
-    public void setDateParution(Date dateParution) {
-        this.dateParution = dateParution;
-    }
-
     public Spot getSpot() {
         return spot;
     }

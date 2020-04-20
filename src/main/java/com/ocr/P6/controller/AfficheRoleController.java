@@ -20,7 +20,7 @@ public class AfficheRoleController {
      */
 
     @RequestMapping(value = "/getLogedUser")
-    public Map<String, Object> getLogedUser(HttpServletRequest httpServletRequest){
+    public Map<String, Object> recupererLogUser(HttpServletRequest httpServletRequest){
         HttpSession httpSession=httpServletRequest.getSession();
         SecurityContext securityContext=(SecurityContext)
                 httpSession.getAttribute("SPRING_SECURITY_CONTEXT");

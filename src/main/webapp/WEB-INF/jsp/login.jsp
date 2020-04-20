@@ -11,12 +11,12 @@
 
 </head>
 
-<body class="inscription-section bg-dark-3-light">
+<body class="espaceSection">
 
 <%@include file="_navbar.jsp" %>
 
 
-<div class="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins">
+<div class="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins col-xs-12">
     <div class="wrapper wrapper--w780">
         <div class="card card-3">
             <div class="card-heading"></div>

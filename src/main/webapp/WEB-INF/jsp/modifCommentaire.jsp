@@ -10,7 +10,7 @@
 
 </head>
 
-<body class="inscription-section bg-dark-3-light">
+<body class="espaceSection">
 
 <%@include file="_navbar.jsp" %>
 
@@ -23,7 +23,7 @@
                     <h5 class="card-title text-center">Ajouter un commentaire</h5>
 
 
-                    <th:form modelAttribute="comment" action="${pageContext.request.contextPath }/updateComment" class="form-signin"  method="post">
+                    <th:form modelAttribute="comment" action="${pageContext.request.contextPath }/commentaire/modifier" class="form-signin"  method="post">
 
 
                         <div class="form-label-group">
@@ -42,7 +42,7 @@
                         <hr>
                         <tr>
                             <td>
-                        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Soumettre ce commentaire</button>
+                        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Soumettre ce nouveau commentaire</button>
                         <hr class="my-4">
                             </td>
                         </tr>

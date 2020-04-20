@@ -11,7 +11,7 @@
 
 </head>
 
-<body class="bg-dark-3-light">
+<body>
 
 <%@include file="_navbar.jsp" %>
 

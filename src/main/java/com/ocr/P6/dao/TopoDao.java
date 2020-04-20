@@ -1,7 +1,6 @@
 package com.ocr.P6.dao;
 
 import com.ocr.P6.model.Topo;
-import com.ocr.P6.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

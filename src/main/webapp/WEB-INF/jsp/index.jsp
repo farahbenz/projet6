@@ -9,9 +9,9 @@
 
 </head>
 
-<body style="background-image: url('img/bg-masthead.jpg');">
+<body class="fondimage" style="background-image: url('img/bg-masthead.jpg');">
 
-  <!-- Header -->
+
   <header class="masthead">
     <div class="container d-flex h-100 align-items-center">
       <div class="mx-auto text-center">

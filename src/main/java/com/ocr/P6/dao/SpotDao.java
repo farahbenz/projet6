@@ -1,6 +1,7 @@
 package com.ocr.P6.dao;
 
 import com.ocr.P6.model.Spot;
+import com.ocr.P6.service.SpotDaoCustom;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import java.util.List;

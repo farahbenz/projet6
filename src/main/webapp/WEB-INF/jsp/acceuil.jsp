@@ -11,7 +11,7 @@
   <%@include file="_head.jsp" %>
 
 </head>
-<body style="background-image: url('img/acceuil.jpg');">
+<body class="fondimage" style="background-image: url('img/acceuil.jpg');">
 
   <%@include file="_navbar.jsp" %>
 
@@ -29,7 +29,7 @@
         <a class = "btn-primary text-white-90" href="/inscription">Inscrivez-vous</a>
       </p>
 
-      <form action="/search" method="get">
+      <form action="/rechercher" method="get">
         <div class="form-row text-center">
          
             <input type="text" name="nom" class="form-control form-control-lg" placeholder="Entrer un lieux">

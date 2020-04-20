@@ -10,13 +10,13 @@
 
 </head>
 
-<body class="inscription-section bg-dark-3-light">
+<body class="espaceSection">
 
 <%@include file="_navbar.jsp" %>
 
 <div class="container">
     <div class="row">
-        <div class="col-lg-10 col-xl-9 mx-auto">
+        <div class=" col-lg-10 col-xl-9 mx-auto">
             <div class="card card-signin flex-row my-5">
 
                 <div class="card-body">
