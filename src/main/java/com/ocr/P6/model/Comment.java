@@ -33,6 +33,9 @@ public class Comment {
     public Comment() {
     }
 
+    public void setDateParution(Date dateParution) {
+        this.dateParution = dateParution;
+    }
 
     public Long getId() {
         return id;

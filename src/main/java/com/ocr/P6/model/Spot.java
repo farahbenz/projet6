@@ -49,6 +49,26 @@ public class Spot {
     public Spot(String nom, String type) {
     }
 
+    public void setSecteur(String secteur) {
+        this.secteur = secteur;
+    }
+
+    public void setHauteur(String hauteur) {
+        this.hauteur = hauteur;
+    }
+
+    public void setNombreDeVoies(String nombreDeVoies) {
+        this.nombreDeVoies = nombreDeVoies;
+    }
+
+    public void setCotation(String cotation) {
+        this.cotation = cotation;
+    }
+
+    public void setCoordoneeGeo(String coordoneeGeo) {
+        this.coordoneeGeo = coordoneeGeo;
+    }
+
     public Long getId() {
         return id;
     }

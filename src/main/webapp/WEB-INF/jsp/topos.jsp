@@ -44,14 +44,29 @@
                             <td>${topo.description}</td>
                             <td>${topo.dateParution}</td>
                             <td><a class="btn-primary" href="${pageContext.request.contextPath }/reservation/${topo.id}">
-                                <c:choose>
-                                <c:when test="${topo.disponibilite == false}">
-                                    Réserver
-                                </c:when>
-                                <c:otherwise>
-                                    Indisponible
-                                </c:otherwise>
-                            </c:choose></a>
+<%--                                <c:choose>--%>
+
+<%--                                <c:when test="${topo.disponibilite == false}">--%>
+<%--                                    Réserver--%>
+<%--                                </c:when>--%>
+
+<%--                                    <c:when test="${topo.user == pageContext.request.userPrincipal.name}">--%>
+
+<%--                                    </c:when>--%>
+
+<%--                                <c:otherwise>--%>
+<%--                                    Indisponible--%>
+<%--                                </c:otherwise>--%>
+<%--                                </c:choose>--%>
+
+    <c:if test="${topo.disponibilite == false}">
+        Réserver
+    </c:if>
+    <c:if test="${topo.disponibilite == true}">
+        Indisponible
+    </c:if>
+
+                            </a>
 
                         </tr>
 

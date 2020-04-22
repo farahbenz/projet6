@@ -18,11 +18,11 @@ public class Topo {
     @UpdateTimestamp
     @Temporal(TemporalType.DATE)
     private Date dateParution;
+    private String bookingUser;
 
     @ManyToOne
     private User user;
 
-    private String bookingUser;
 
     public Topo(String nom, String description, String region, Boolean disponibilite, Date dateParution) {
         this.nom = nom;
@@ -98,6 +98,14 @@ public class Topo {
 
     public Date getDateParution() {
         return dateParution;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
+    public void setDateParution(Date dateParution) {
+        this.dateParution = dateParution;
     }
 
 }

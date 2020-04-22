@@ -22,7 +22,7 @@
                 <div class="card-body">
                     <h5 class="card-title text-center">Ajouter un topo</h5>
 
-                    <th:form modelAttribute="topo" action="/topo/ajouter" class="form-signin"  method="post">
+                    <th:form modelAttribute="topo" action="/ajoutTopo" class="form-signin"  method="post">
 
 
                         <div class="form-label-group">

@@ -41,7 +41,7 @@ public class CommentController {
         comment.setAuteur(username);
         commentDao.save(comment);
         redirectAttrs.addAttribute("idSpot", comment.getSpot().getId());
-        return "redirect:/spot/afficher/{idSpot}";
+        return "redirect:/afficheSpot/{idSpot}";
     }
 
     /**
@@ -53,7 +53,7 @@ public class CommentController {
         model.addAttribute("comment", new Comment());
         commentDao.deleteById(id);
 
-        return "redirect:/spot/afficher";
+        return "redirect:/afficheSpot";
     }
 
     /**
@@ -74,7 +74,7 @@ public class CommentController {
         commentPrecedent.setCommentaire(comment.getCommentaire());
         commentDao.save(commentPrecedent);
         redirectAttrs.addAttribute("idSpot", commentPrecedent.getSpot().getId());
-        return "redirect:/spot/afficher/{idSpot}";
+        return "redirect:/afficheSpot/{idSpot}";
     }
 
 
