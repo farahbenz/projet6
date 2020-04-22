@@ -1,10 +1,10 @@
-#PROJET 3 - METTEZ VOTRE LOGIQUE À L'EPREUVE
+# PROJET 3 - METTEZ VOTRE LOGIQUE À L'EPREUVE
 
-##Présentation de l'application
+## Présentation de l'application
 
 Réalisation d'un site web communautaire sur le thème de l'escalade.
 
-##Paramétrage
+## Paramétrage
 
 application-prod.properties:
 
@@ -13,22 +13,21 @@ datasource url = jdbc:mysql://localhost:3306/AmisEscalade
 username = root
 password = 123
 
-##Pré-requis développement
+## Pré-requis développement
 
 Java 8
 Maven
 SpringBoot
 Base de données MySQL
 
-##Démarrage de l'application
+## Démarrage de l'application
 
 Utiliser les commandes suivantes:
 
 Mode dev: mvn spring-boot:run
-Mode Prod: cd target - java -jar - escladefun.SNAPSHOT.jar
+Mode Prod: cd target - java -jar - P6-0.0.1-SNAPSHOT.war
 
-##Utiliser l'application WEB
+## Utiliser l'application WEB
 
-URL localhost:8088
-
+URL localhost:8080
 
