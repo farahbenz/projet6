@@ -1,4 +1,4 @@
-# PROJET 3 - METTEZ VOTRE LOGIQUE À L'EPREUVE
+# PROJET 6 - Application Web
 
 ## Présentation de l'application
 
