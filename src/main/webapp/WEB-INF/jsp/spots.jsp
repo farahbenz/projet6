@@ -25,6 +25,11 @@
 
         <table
                 class="table table-striped table-hover table-condensed table-bordered">
+            <c:choose>
+            <c:when test="${spot == null}">
+                <mark> Aucun spot enregistré </mark>
+            </c:when>
+            <c:otherwise>
             <tr>
                 <th>Nom</th>
                 <th>Région</th>
@@ -41,6 +46,9 @@
                 </tr>
 
             </c:forEach>
+
+            </c:otherwise>
+            </c:choose>
 
         </table>
     </div>

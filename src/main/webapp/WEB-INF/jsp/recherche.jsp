@@ -20,6 +20,11 @@
 
         <table
                 class="table table-striped table-hover table-condensed table-bordered">
+            <c:choose>
+            <c:when test="${spots.isEmpty()}">
+                <mark><B> Aucun résultat </B></mark>
+            </c:when>
+            <c:otherwise>
             <tr>
                 <th>Region</th>
                 <th>Type</th>
@@ -34,6 +39,9 @@
                 </tr>
 
             </c:forEach>
+            </c:otherwise>
+            </c:choose>
+
 
         </table>
     </div>

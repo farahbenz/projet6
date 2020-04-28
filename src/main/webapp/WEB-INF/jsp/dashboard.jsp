@@ -22,6 +22,11 @@
 
         <table
                 class="table table-striped table-hover table-condensed table-bordered">
+            <c:choose>
+            <c:when test="${topos.isEmpty()}">
+                <mark><B> Aucun Topo enregistré </B></mark>
+            </c:when>
+            <c:otherwise>
             <tr>
                 <th>Nom</th>
                 <th>Region</th>
@@ -49,12 +54,21 @@
 
                             </c:otherwise>
                         </c:choose>
+                    </td>
                     <td>
                     <c:choose>
                         <c:when test="${topo.disponibilite == true}">
-                            <a class="btn-primary" href="${pageContext.request.contextPath }/reservation/valider/${topo.id}"> Envoi email </a>
-                        <hr/>
-                            <a class="btn-primary" href="${pageContext.request.contextPath }/reservation/annuler/${topo.id}"> remettre en ligne </a>
+                            <a  href="${pageContext.request.contextPath }/reservation/valider/${topo.id}">
+
+                                <c:if test="${topo.echangeEmail == false}">
+                                    <input type="button"  value ="Envoyé un email"/>
+                                </c:if>
+                                <c:if test="${topo.echangeEmail == true}">
+                                    <input type="button"  value ="Email envoyé"/>
+                                </c:if>
+                            </a>
+                            <hr/>
+                            <a class="btn-primary" href="${pageContext.request.contextPath }/reservation/annuler/${topo.id}"><input type="button" value ="Remettre en ligne"/> </a>
                         </c:when>
                         <c:otherwise>
 
@@ -62,9 +76,13 @@
 
                         </c:otherwise>
                     </c:choose>
+                    </td>
                 </tr>
 
             </c:forEach>
+
+            </c:otherwise>
+            </c:choose>
 
         </table>
     </div>

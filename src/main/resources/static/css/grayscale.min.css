@@ -22,6 +22,10 @@
    padding: 0;
    min-width: 100%;
    min-height: 120%;
+   background-position: center center;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-size: cover;
    background: -webkit-gradient(linear, left bottom, left top, from(#526e69), to(#a3abb6));
    background: -webkit-linear-gradient(bottom, #526e69 0%, #a3abb6 100%);
    background: -moz-linear-gradient(bottom, #526e69 0%, #a3abb6 100%);

@@ -65,11 +65,12 @@ public class SpotController {
      */
 
     @RequestMapping(value = "/afficheSpot/{id}")
-    public String reucpererIdSpot(@PathVariable("id") Long id, Model model) {
+    public String reucpererIdSpot(@PathVariable("id") Long id, Model model, RedirectAttributes redirectAttrs) {
         Spot spot = spotDao.findById(id).get();
         model.addAttribute("spot", spot);
         model.addAttribute("comment", new Comment());
         model.addAttribute("comments", commentDao.findAllBySpot(spot));
+
         return "afficheSpot";
     }
 
@@ -77,7 +78,7 @@ public class SpotController {
      * Methode qui permet de modifier le tag
      */
 
-    @RequestMapping(value ="/tag/modifier/{id}", method = RequestMethod.GET)
+    @RequestMapping(value ="/tag/{id}", method = RequestMethod.GET)
     public String modifierTag(@PathVariable("id")Long id, RedirectAttributes redirectAttrs) {
         Spot spot = spotDao.findById(id).get();
         spot.setTag(!spot.isTag());

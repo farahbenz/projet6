@@ -44,6 +44,7 @@
 
 
             <tr>
+
                 <td>${spot.nom}</td>
                 <td>${spot.secteur}</td>
                 <td>${spot.type}</td>
@@ -52,33 +53,30 @@
                 <td>${spot.nombreDeVoies}</td>
                 <td>${spot.coordoneeGeo}</td>
                 <td>${spot.cotation}</td>
-                <td>
-                    <c:choose>
+                <td><c:choose>
                         <c:when test="${spot.tag == true}">
                             oui
                         </c:when>
                         <c:otherwise>
                             non
                         </c:otherwise>
-                    </c:choose>
+                    </c:choose></td>
 
-                </td>
-
-                <td><a class="btn-primary" href="${pageContext.request.contextPath }/tag/modifier/${spot.id}">Modifer</a>
-                </td>
+                <td><a class="btn-primary" href="${pageContext.request.contextPath }/tag/${spot.id}">Modifer</a></td>
             </tr>
-
-
-<hr/>
-
 
         </table>
 
 
-                <h2 class="text-black mb-4 text-center">COMMENTAIRES</h2>
+                <h2 class="text-black mb-4 text-center">Commentaire</h2>
 
                 <table
                         class="table table-striped table-hover table-condensed table-bordered">
+                    <c:choose>
+                    <c:when test="${comments.isEmpty()}">
+                        <mark><B> Aucun commentaire enregistré </B></mark>
+                    </c:when>
+                    <c:otherwise>
                     <tr>
                         <th>Auteur</th>
                         <th>Commentaire</th>
@@ -95,16 +93,18 @@
                         <td>${com.auteur}</td>
                         <td>${com.commentaire}</td>
                         <td>${com.dateParution}</td>
-                        <td><a class="btn-primary" href="${pageContext.request.contextPath }/commentaire/modifier/${com.id}">Modifier</a></td>
+                        <td><a class="btn-primary" href="${pageContext.request.contextPath }/modifCommentaire/${com.id}">Modifier</a></td>
                         <td>
-                            <a class="btn-primary" href="${pageContext.request.contextPath }/commentaire/supprimer/${com.id}" onclick="return confirm('Êtes vous sur de vouloir supprimer ce commentaire?')">Delete</a>
+                            <a class="btn-primary" href="${pageContext.request.contextPath }/delete/${com.id}" onclick="return confirm('Êtes vous sur de vouloir supprimer ce commentaire?')">Delete</a>
                         </td>
-
-
-                        </tr>
+                         </tr>
 
                     </c:forEach>
+                    </c:otherwise>
+                    </c:choose>
+
                 </table>
+
 
     </div>
 </div>
@@ -115,7 +115,7 @@
                 <h2 class="card-title text-center">Ajouter un commentaire</h2>
 
 
-                <th:form modelAttribute="comment" action="/commentaire/enregistrement" class="form-signin"  method="post">
+                <th:form modelAttribute="comment" action="/afficheSpot" class="form-signin"  method="post">
 
 
                     <div class="form-label-group">

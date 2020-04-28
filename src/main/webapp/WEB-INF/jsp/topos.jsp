@@ -26,6 +26,11 @@
 
                 <table
                         class="table table-striped table-hover table-condensed table-bordered">
+                    <c:choose>
+                    <c:when test="${topos == null}">
+                        <mark><B> Aucun topo disponible </B></mark>
+                    </c:when>
+                    <c:otherwise>
                     <tr>
                         <th>Nom</th>
                         <th>Region</th>
@@ -44,37 +49,21 @@
                             <td>${topo.description}</td>
                             <td>${topo.dateParution}</td>
                             <td><a class="btn-primary" href="${pageContext.request.contextPath }/reservation/${topo.id}">
-<%--                                <c:choose>--%>
 
-<%--                                <c:when test="${topo.disponibilite == false}">--%>
-<%--                                    Réserver--%>
-<%--                                </c:when>--%>
+                        <c:if test="${topo.disponibilite == false}">
+                            <input type="button"  value ="Réserver"/>
+                        </c:if>
+                        <c:if test="${topo.disponibilite == true}">
+                            <input type="button"  value ="indisponible"/>
+                        </c:if>
 
-<%--                                    <c:when test="${topo.user == pageContext.request.userPrincipal.name}">--%>
-
-<%--                                    </c:when>--%>
-
-<%--                                <c:otherwise>--%>
-<%--                                    Indisponible--%>
-<%--                                </c:otherwise>--%>
-<%--                                </c:choose>--%>
-
-    <c:if test="${topo.disponibilite == false}">
-        Réserver
-    </c:if>
-    <c:if test="${topo.disponibilite == true}">
-        Indisponible
-    </c:if>
-
-                            </a>
+                   </a>
 
                         </tr>
 
                     </c:forEach>
-
-
-
-
+                    </c:otherwise>
+                    </c:choose>
 
                 </table>
             </div>

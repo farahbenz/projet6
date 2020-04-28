@@ -5,8 +5,6 @@ import com.ocr.P6.dao.UserDao;
 import com.ocr.P6.model.Topo;
 import com.ocr.P6.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -19,9 +17,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class TopoController {
-
-    @Autowired
-    public JavaMailSender emailSender;
 
     @Autowired
     private TopoDao topoDao;
@@ -68,6 +63,10 @@ public class TopoController {
 
         model.addAttribute("topos", topoDao.findAll());
 
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String username = authentication.getName();
+        model.addAttribute("user", username);
+
         return "topos";
     }
 
@@ -94,54 +93,7 @@ public class TopoController {
 
     }
 
-    /**
-     * Méthode qui garde le topo reservé si le propriétaire accepte
-     */
 
-    @RequestMapping(value = "/reservation/valider/{id}", method = RequestMethod.GET)
-    public String reservationValider (@PathVariable("id") Long id){
-
-
-        Topo topo = topoDao.findById(id).get();
-        envoiEmail(topo);
-
-        return "redirect:/dashboard";
-
-}
-
-    /**
-     * Méthode qui garde le topo disponible si le propriétaire refuse.
-     */
-
-    @RequestMapping(value = "/reservation/annuler/{id}", method = RequestMethod.GET)
-    public String reservationAnnuler (@PathVariable("id") Long id){
-
-        Topo topo = topoDao.findById(id).get();
-        topo.setDisponibilite(false);
-        topo.setBookingUser("null");
-        topoDao.save(topo);
-
-        return "redirect:/dashboard";
-
-    }
-
-    /**
-     * Méthode qui va permettre l'envoi d'un email.
-     */
-
-    @RequestMapping(value = "/envoiEmail", method = RequestMethod.GET)
-    public void envoiEmail(Topo topo){
-
-        SimpleMailMessage message = new SimpleMailMessage();
-        String emailBookingUser = topo.getBookingUser();
-        message.setTo(emailBookingUser);
-        message.setSubject("Reservation Topo");
-        User user = topo.getUser();
-        String emailProprietaireTopo = user.getEmail();
-        message.setText("Hello,\n Votre reservation à été accepté veuillez contacter le proprietaire du topo par email que voici : " + emailProprietaireTopo + ".\n Amusez vous bien ! \n L'équipe AmisEscalade");
-        this.emailSender.send(message);
-
-    }
 
 
 }

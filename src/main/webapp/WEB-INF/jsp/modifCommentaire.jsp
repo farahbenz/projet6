@@ -23,29 +23,31 @@
                     <h5 class="card-title text-center">Ajouter un commentaire</h5>
 
 
-                    <th:form modelAttribute="comment" action="${pageContext.request.contextPath }/commentaire/modifier" class="form-signin"  method="post">
+                    <th:form modelAttribute="comment" action="${pageContext.request.contextPath }/modifCommentaire" class="form-signin"  method="post">
 
 
                         <div class="form-label-group">
 
                             <tr>
-                            <td>Commentaire</td>
+                            <td> Nouveau commentaire</td>
                             <td>
                             <th:input path="commentaire" />
+                                <hr>
+                                <hr>
                             </td>
                                 <th:input path="id" type="hidden"/>
                             </tr>
+                            <hr>
+                            <hr>
 
-
-                        </div>
-
-                        <hr>
                         <tr>
                             <td>
                         <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Soumettre ce nouveau commentaire</button>
                         <hr class="my-4">
                             </td>
                         </tr>
+
+                        </div>
                     </th:form>
                 </div>
             </div>

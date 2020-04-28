@@ -19,9 +19,11 @@ public class Topo {
     @Temporal(TemporalType.DATE)
     private Date dateParution;
     private String bookingUser;
+    private boolean echangeEmail = false;
 
     @ManyToOne
     private User user;
+
 
 
     public Topo(String nom, String description, String region, Boolean disponibilite, Date dateParution) {
@@ -42,6 +44,14 @@ public class Topo {
     }
 
     public Topo() {
+    }
+
+    public boolean isEchangeEmail() {
+        return echangeEmail;
+    }
+
+    public void setEchangeEmail(boolean echangeEmail) {
+        this.echangeEmail = echangeEmail;
     }
 
     public String getBookingUser() {
