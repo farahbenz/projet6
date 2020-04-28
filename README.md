@@ -7,7 +7,7 @@ Réalisation d'un site web communautaire sur le thème de l'escalade.
  1. Objectif :
   	
   Réaliser une application web pour rendre visible les amis de l’escalade en ligne.
-  Le site doit être responsive, sécurisé et le vocabulaire de l’escalade doit être utilisé. 							
+  Le site doit être responsive, sécurisé et le vocabulaire de l’escalade doit être utilisé.						
 	
   2. Fonctionnalités attendues :
   
