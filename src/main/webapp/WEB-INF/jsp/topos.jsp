@@ -27,7 +27,7 @@
                 <table
                         class="table table-striped table-hover table-condensed table-bordered">
                     <c:choose>
-                    <c:when test="${topos == null}">
+                    <c:when test="${topos.isEmpty()}">
                         <mark><B> Aucun topo disponible </B></mark>
                     </c:when>
                     <c:otherwise>

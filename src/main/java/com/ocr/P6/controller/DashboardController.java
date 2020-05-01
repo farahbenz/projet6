@@ -54,7 +54,7 @@ public class DashboardController {
     }
 
     /**
-     * Méthode qui garde le topo disponible si le propriétaire refuse.
+     * Méthode qui remet le topo disponible si le propriétaire refuse.
      */
 
     @RequestMapping(value = "/reservation/annuler/{id}", method = RequestMethod.GET)

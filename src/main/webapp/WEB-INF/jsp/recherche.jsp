@@ -33,7 +33,7 @@
 
             <c:forEach var="spot" items="${spots}">
                 <tr>
-                    <td>${spot.nom}</td>
+                    <td>${spot.secteur}</td>
                     <td>${spot.type}</td>
                     <td><a class="btn btn-primary" href="/afficheSpot/${spot.id}" role="button" >Detail</a></td>
                 </tr>

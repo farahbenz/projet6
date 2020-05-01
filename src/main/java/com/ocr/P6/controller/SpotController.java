@@ -38,7 +38,7 @@ public class SpotController {
     }
 
     /**
-     * Méthode qui va permettre l'enregistrement des données spot.
+     * Méthode qui va permettre l'enregistrement des données spots.
      */
 
     @RequestMapping(value = "/ajoutSpot", method = RequestMethod.POST)

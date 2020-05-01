@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class AffichageController {
 
     /**
-     * Méthodes qui vont permettre d'afficher ses différentes pages
+     * Méthodes qui vont permettre d'afficher ces différentes pages
      */
 
     @RequestMapping(value = "/index", method = RequestMethod.GET)

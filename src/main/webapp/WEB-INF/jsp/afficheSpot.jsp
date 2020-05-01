@@ -30,7 +30,7 @@
 
             <tr>
                 <th>Nom</th>
-                <th>Secteur</th>
+                <th>Region</th>
                 <th>Type</th>
                 <th>Hauteur</th>
                 <th>Orientation</th>

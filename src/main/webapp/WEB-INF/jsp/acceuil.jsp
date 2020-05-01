@@ -32,7 +32,7 @@
       <form action="/rechercher" method="get">
         <div class="form-row text-center">
          
-            <input type="text" name="nom" class="form-control form-control-lg" placeholder="Entrer un lieux">
+            <input type="text" name="secteur" class="form-control form-control-lg" placeholder="Entrer un secteur(Savoie...)">
             <input type="text" name="type" class="form-control form-control-lg" placeholder="Entrer un type (Falaise...)">
            <hr>
             <button class="btn btn-primary container" value="Search" role="button" >Trouver un spot</button>

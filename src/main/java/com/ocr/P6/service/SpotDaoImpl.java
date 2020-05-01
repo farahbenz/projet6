@@ -19,15 +19,15 @@ public class SpotDaoImpl implements SpotDaoCustom {
     EntityManager em;
 
     @Override
-    public List<Spot> findSpotByRegion(String nom, String type) {
+    public List<Spot> findSpotByRegion(String secteur, String type) {
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<Spot> cq = cb.createQuery(Spot.class);
 
         Root<Spot> spot = cq.from(Spot.class);
         List<Predicate> predicates = new ArrayList<>();
 
-        if (nom != null && !nom.isEmpty()) {
-            predicates.add(cb.equal(spot.get("nom"), nom));
+        if (secteur != null && !secteur.isEmpty()) {
+            predicates.add(cb.equal(spot.get("secteur"), secteur));
         }
         if (type != null && !type.isEmpty()) {
             predicates.add(cb.equal(spot.get("type"), type));

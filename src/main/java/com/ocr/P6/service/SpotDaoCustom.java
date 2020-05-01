@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface SpotDaoCustom {
 
-    List<Spot> findSpotByRegion(String nom, String type);
+    List<Spot> findSpotByRegion(String secteur, String type);
 
 }

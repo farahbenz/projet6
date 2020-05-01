@@ -26,7 +26,7 @@
         <table
                 class="table table-striped table-hover table-condensed table-bordered">
             <c:choose>
-            <c:when test="${spot == null}">
+            <c:when test="${spots.isEmpty()}">
                 <mark> Aucun spot enregistré </mark>
             </c:when>
             <c:otherwise>
