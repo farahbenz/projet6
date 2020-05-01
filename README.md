@@ -21,11 +21,11 @@ Réalisation d'un site web communautaire sur le thème de l'escalade.
 
 ## Démarrage de l'application
 
--> À l'aide d'un serveur d'application lancer le fichier : P6-0.0.1-SNAPSHOT.war
--> Pour le deployement de la base de données : 
-	- Installer MySQL 
-	- Créer une nouvelle base et copier le contenu du fichier ScriptSQLProjet6 (disponible ci-dessus) 
-	- Inserer ensuite le contenu du fichier demoProjet6 (disponible ci-dessus)
+-> À l'aide d'un serveur d'application lancer le fichier : P6-0.0.1-SNAPSHOT.war. 
+-> Pour le deployement de la base de données :  
+	- Installer MySQL.   
+	- Créer une nouvelle base et copier le contenu du fichier ScriptSQLProjet6 (disponible ci-dessus).  
+	- Inserer ensuite le contenu du fichier demoProjet6 (disponible ci-dessus). 
 
 
 
