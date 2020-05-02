@@ -45,7 +45,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/afficheSpot").permitAll()
                 .antMatchers("/rechercher").permitAll()
                 .antMatchers("/delete/{id}").access("hasRole('ROLE_admin')")
-                .antMatchers("/modifCommentaire").access("hasRole('ROLE_admin')")
+                .antMatchers("/modifCommentaire/{id}").access("hasRole('ROLE_admin')")
                 .antMatchers("/topos").access("hasRole('ROLE_admin')or hasRole('ROLE_user')")
                 .antMatchers("/ajoutSpot").access("hasRole('ROLE_admin')or hasRole('ROLE_user')")
                 .antMatchers("/tag/{id}").access("hasRole('ROLE_admin')")

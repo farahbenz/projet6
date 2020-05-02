@@ -99,7 +99,7 @@ public class DashboardController {
         String emailBookingUser = topo.getBookingUser();
         message1.setTo(emailBookingUser);
         message1.setSubject("Reservation Topo");
-        message1.setText("Hello,\n Votre reservation à été refusé.\n À bientôt! \n L'équipe AmisEscalade");
+        message1.setText("Hello,\n Soit votre reservation à été refusé, soit votre reservation du topo à pris fin.\n À bientôt! \n L'équipe AmisEscalade");
         this.emailSender.send(message1);
 
     }
